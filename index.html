@@ -3,224 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>US Skating Profiles — Athlete Bios & Results</title>
+<title>US Skating Profiles — 2025–26 Senior Ladies Roster</title>
 <meta name="description" content="Official-style athlete profiles for US figure skaters. Bios, personal bests, competition results, and season programs.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --red: #DA291C;
-  --red-dark: #b31e13;
-  --red-light: #fdf2f1;
-  --navy: #0B2265;
-  --gray-50: #f7f7f7;
-  --gray-100: #f0f0f0;
-  --gray-200: #e2e2e2;
-  --gray-400: #aaa;
-  --gray-600: #666;
-  --gray-800: #333;
-  --gray-900: #111;
-  --white: #fff;
-  --font: 'Inter', system-ui, sans-serif;
-}
-body { font-family: var(--font); background: var(--gray-50); color: var(--gray-900); font-size: 14px; line-height: 1.5; }
-
-/* NAV */
-.topbar { background: var(--navy); height: 30px; display: flex; align-items: center; padding: 0 1.5rem; gap: 1rem; }
-.topbar-text { color: rgba(255,255,255,0.45); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; }
-.topbar a { color: rgba(255,255,255,0.55); font-size: 11px; text-decoration: none; margin-left: auto; }
-.topbar a:hover { color: white; }
-
-.nav {
-  background: var(--white); border-bottom: 3px solid var(--red);
-  display: flex; align-items: stretch; padding: 0 1.5rem;
-  position: sticky; top: 0; z-index: 100;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
-}
-.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; padding: 10px 0; margin-right: 2rem; }
-.nav-logo-mark {
-  width: 36px; height: 36px; border-radius: 50%; background: var(--red);
-  display: flex; align-items: center; justify-content: center;
-  color: white; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; flex-shrink: 0;
-}
-.nav-logo-words { line-height: 1.15; }
-.nav-logo-top { font-size: 15px; font-weight: 700; color: var(--navy); letter-spacing: -0.01em; }
-.nav-logo-sub { font-size: 10px; font-weight: 600; color: var(--red); letter-spacing: 0.07em; text-transform: uppercase; }
-.nav-links { display: flex; align-items: stretch; }
-.nav-a {
-  display: flex; align-items: center; color: var(--gray-800); font-size: 13px; font-weight: 500;
-  text-decoration: none; padding: 0 14px; border-bottom: 3px solid transparent; margin-bottom: -3px;
-}
-.nav-a:hover { color: var(--red); }
-.nav-a.active { color: var(--red); border-bottom-color: var(--red); font-weight: 600; }
-
-/* PAGE HEADER */
-.page-header { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 1.25rem 1.5rem 0; }
-.page-header-inner { max-width: 1060px; margin: 0 auto; }
-.breadcrumb { font-size: 11px; color: var(--gray-400); margin-bottom: 8px; }
-.breadcrumb a { color: var(--red); text-decoration: none; }
-.breadcrumb a:hover { text-decoration: underline; }
-.page-title-row { display: flex; align-items: flex-end; justify-content: space-between; }
-.page-title { font-size: 24px; font-weight: 700; color: var(--navy); letter-spacing: -0.01em; }
-.season-tag {
-  background: var(--red); color: white;
-  font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
-  padding: 3px 10px; margin-bottom: 4px;
-}
-.page-sub-nav { display: flex; margin-top: 10px; }
-.page-sub-a {
-  color: var(--gray-600); font-size: 12px; font-weight: 500; text-decoration: none;
-  padding: 8px 14px; border-top: 3px solid transparent; margin-top: 0; display: inline-block;
-}
-.page-sub-a:hover { color: var(--red); }
-.page-sub-a.active { color: var(--red); border-top-color: var(--red); font-weight: 600; }
-
-/* ROSTER */
-.wrap { max-width: 1060px; margin: 0 auto; padding: 1.5rem; }
-.roster-toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 10px; }
-.filter-group { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
-.filter-lbl { font-size: 11px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.06em; }
-.fbtn {
-  padding: 5px 13px; font-size: 12px; font-weight: 500;
-  border: 1px solid var(--gray-200); color: var(--gray-600); cursor: pointer;
-  background: var(--white); font-family: var(--font); border-radius: 2px; transition: all 0.1s;
-}
-.fbtn:hover { border-color: var(--red); color: var(--red); }
-.fbtn.on { background: var(--red); border-color: var(--red); color: white; }
-.roster-count { font-size: 12px; color: var(--gray-400); }
-
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(175px, 1fr)); gap: 1px; background: var(--gray-200); border: 1px solid var(--gray-200); }
-
-.card { background: var(--white); cursor: pointer; display: flex; flex-direction: column; transition: background 0.1s; }
-.card:hover { background: var(--red-light); }
-.card:hover .card-name { color: var(--red); }
-
-.card-photo {
-  aspect-ratio: 3/4; background: var(--gray-100); position: relative;
-  display: flex; align-items: center; justify-content: center; overflow: hidden;
-  border-bottom: 2px solid var(--gray-200);
-}
-.card:hover .card-photo { border-bottom-color: var(--red); }
-.card-photo-init { font-size: 26px; font-weight: 700; color: var(--gray-300); user-select: none; }
-.card-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-
-.badge-level {
-  position: absolute; top: 8px; left: 8px;
-  background: var(--navy); color: white;
-  font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 2px 7px;
-}
-.badge-disc {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  background: rgba(11,34,101,0.88); color: rgba(255,255,255,0.92);
-  font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
-  padding: 4px 10px;
-}
-
-.card-body { padding: 10px 11px 12px; }
-.card-name { font-size: 13px; font-weight: 700; color: var(--gray-900); line-height: 1.25; margin-bottom: 2px; }
-.card-pron { font-size: 11px; color: var(--gray-400); margin-bottom: 4px; }
-.card-hometown { font-size: 11px; color: var(--gray-600); margin-bottom: 9px; }
-.card-scores { display: flex; gap: 3px; }
-.sc { flex: 1; border: 1px solid var(--gray-100); padding: 4px 0; text-align: center; }
-.sc-lbl { font-size: 9px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-400); }
-.sc-val { font-size: 12px; font-weight: 700; color: var(--navy); }
-
-/* PROFILE */
-.profile-banner { background: var(--navy); padding: 0 1.5rem; }
-.profile-banner-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: flex-end; gap: 1.5rem; padding-top: 1.5rem; }
-.profile-headshot {
-  width: 120px; flex-shrink: 0; aspect-ratio: 3/4;
-  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
-  border-bottom: none; border-radius: 2px 2px 0 0;
-  display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
-}
-.profile-headshot img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-.profile-headshot-init { font-size: 28px; font-weight: 700; color: rgba(255,255,255,0.15); }
-.profile-headshot-note { position: absolute; bottom: 8px; font-size: 9px; color: rgba(255,255,255,0.2); letter-spacing: 0.05em; text-align: center; width: 100%; }
-
-.profile-text { padding-bottom: 1.25rem; flex: 1; }
-.profile-disc-tag {
-  display: inline-block; background: var(--red); color: white;
-  font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 2px 10px; margin-bottom: 8px;
-}
-.profile-name { font-size: 32px; font-weight: 700; color: white; line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 3px; }
-.profile-pron { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
-.profile-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.chip {
-  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14);
-  color: rgba(255,255,255,0.65); font-size: 11px; padding: 3px 10px;
-}
-
-.profile-subbar { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 0 1.5rem; }
-.profile-subbar-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-.profile-tabs { display: flex; }
-.ptab { color: var(--gray-600); font-size: 12px; font-weight: 500; padding: 9px 14px; border-top: 3px solid transparent; display: inline-block; cursor: default; }
-.ptab.active { color: var(--red); border-top-color: var(--red); font-weight: 600; }
-.back-btn { color: var(--red); font-size: 12px; font-weight: 500; cursor: pointer; background: none; border: none; font-family: var(--font); display: flex; align-items: center; gap: 4px; }
-.back-btn:hover { text-decoration: underline; }
-
-.profile-body { max-width: 1060px; margin: 0 auto; padding: 1.5rem; display: grid; grid-template-columns: 268px 1fr; gap: 1.25rem; align-items: start; }
-
-/* sidebar */
-.sidebar > * + * { margin-top: 1rem; }
-.scard { background: var(--white); border: 1px solid var(--gray-200); }
-.scard-head { background: var(--navy); color: white; font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; padding: 7px 12px; }
-.srow { display: flex; justify-content: space-between; align-items: flex-start; padding: 7px 12px; border-bottom: 1px solid var(--gray-100); gap: 8px; }
-.srow:last-child { border-bottom: none; }
-.slbl { font-size: 11px; color: var(--gray-400); flex-shrink: 0; width: 105px; }
-.sval { font-size: 12px; font-weight: 600; color: var(--gray-800); text-align: right; line-height: 1.4; }
-
-.pb-row { display: flex; }
-.pb-cell { flex: 1; text-align: center; padding: 11px 6px; border-right: 1px solid var(--gray-100); }
-.pb-cell:last-child { border-right: none; }
-.pb-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-400); margin-bottom: 3px; }
-.pb-num { font-size: 20px; font-weight: 700; color: var(--navy); line-height: 1; }
-
-/* main */
-.mcontent > * + * { margin-top: 1rem; }
-.mcard { background: var(--white); border: 1px solid var(--gray-200); }
-.mcard-head { background: var(--navy); color: white; font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; padding: 7px 14px; }
-.mcard-body { padding: 14px 16px; }
-
-.bio-text { font-size: 13px; line-height: 1.8; color: var(--gray-600); }
-
-.acc-list { list-style: none; }
-.acc-item { display: flex; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--gray-100); align-items: flex-start; }
-.acc-item:last-child { border-bottom: none; }
-.acc-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--red); flex-shrink: 0; margin-top: 6px; }
-.acc-txt { font-size: 13px; color: var(--gray-800); line-height: 1.4; }
-
-.prog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.prog { background: var(--gray-50); border: 1px solid var(--gray-200); padding: 10px 12px; }
-.prog-type { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--red); margin-bottom: 3px; }
-.prog-music { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 1px; }
-.prog-artist { font-size: 11px; color: var(--gray-400); }
-
-table.rtable { width: 100%; border-collapse: collapse; font-size: 12px; }
-.rtable th { background: var(--gray-50); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-400); padding: 7px 12px; text-align: left; border-bottom: 1px solid var(--gray-200); }
-.rtable td { padding: 8px 12px; border-bottom: 1px solid var(--gray-100); color: var(--gray-800); }
-.rtable tr:last-child td { border-bottom: none; }
-.rtable tr:hover td { background: var(--red-light); }
-.rtable th:last-child, .rtable td:last-child { text-align: right; }
-.pl { font-weight: 700; font-size: 12px; }
-.pl1 { color: var(--red); }
-.pl2 { color: var(--navy); }
-.pl3 { color: #8a6200; }
-.pln { color: var(--gray-400); }
-
-@media (max-width: 700px) {
-  .profile-body { grid-template-columns: 1fr; }
-  .profile-banner-inner { flex-direction: column; align-items: flex-start; }
-  .profile-headshot { width: 80px; aspect-ratio: 1; border-radius: 50%; }
-  .profile-name { font-size: 22px; }
-  .prog-grid { grid-template-columns: 1fr; }
-  .grid { grid-template-columns: repeat(2, 1fr); }
-  .wrap { padding: 1rem; }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -228,7 +14,6 @@ table.rtable { width: 100%; border-collapse: collapse; font-size: 12px; }
   <span class="topbar-text">US Skating Profiles</span>
   <a href="#">2025–26 Season</a>
 </div>
-
 <nav class="nav">
   <a class="nav-logo" href="index.html">
     <div class="nav-logo-mark">US</div>
@@ -244,261 +29,131 @@ table.rtable { width: 100%; border-collapse: collapse; font-size: 12px; }
   </div>
 </nav>
 
-<!-- ROSTER PAGE -->
-<div id="rosterPage">
-  <div class="page-header">
-    <div class="page-header-inner">
-      <div class="breadcrumb"><a href="#">Figure Skating</a> › Athlete Profiles</div>
-      <div class="page-title-row">
-        <div class="page-title">Athlete Profiles</div>
-        <div class="season-tag">2025–26 Season</div>
-      </div>
-      <nav class="page-sub-nav">
-        <a class="page-sub-a active" href="#">All Athletes</a>
-        <a class="page-sub-a" href="#">Ladies Singles</a>
-        <a class="page-sub-a" href="#">Men's Singles</a>
-        <a class="page-sub-a" href="#">Ice Dance</a>
-        <a class="page-sub-a" href="#">Pairs</a>
-      </nav>
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb"><a href="index.html">Figure Skating</a> › Athlete Profiles</div>
+    <div class="page-title-row">
+      <div class="page-title">Athlete Profiles</div>
+      <div class="season-tag">2025–26 Season</div>
     </div>
-  </div>
-
-  <div class="wrap">
-    <div class="roster-toolbar">
-      <div class="filter-group">
-        <span class="filter-lbl">Level:</span>
-        <button class="fbtn on">All</button>
-        <button class="fbtn">Senior</button>
-        <button class="fbtn">Junior</button>
-      </div>
-      <div class="roster-count" id="rosterCount">2 athletes</div>
-    </div>
-
-    <div class="grid" id="rosterGrid">
-
-      <div class="card" onclick="openProfile('gjr')">
-        <div class="card-photo">
-          <div class="card-photo-init">GJR</div>
-          <div class="badge-level">Junior</div>
-          <div class="badge-disc">Ladies Singles</div>
-        </div>
-        <div class="card-body">
-          <div class="card-name">Gabriela Juarez Rivas</div>
-          <div class="card-pron">She/Her</div>
-          <div class="card-hometown">Add hometown</div>
-          <div class="card-scores">
-            <div class="sc"><div class="sc-lbl">SP PB</div><div class="sc-val">56.12</div></div>
-            <div class="sc"><div class="sc-lbl">FS PB</div><div class="sc-val">112.44</div></div>
-            <div class="sc"><div class="sc-lbl">Total</div><div class="sc-val">168.56</div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" onclick="openProfile('en')">
-        <div class="card-photo">
-          <div class="card-photo-init">EN</div>
-          <div class="badge-level">Junior</div>
-          <div class="badge-disc">Ladies Singles</div>
-        </div>
-        <div class="card-body">
-          <div class="card-name">Emilie Nemirovsky</div>
-          <div class="card-pron">She/Her</div>
-          <div class="card-hometown">Add hometown</div>
-          <div class="card-scores">
-            <div class="sc"><div class="sc-lbl">SP PB</div><div class="sc-val">58.77</div></div>
-            <div class="sc"><div class="sc-lbl">FS PB</div><div class="sc-val">118.30</div></div>
-            <div class="sc"><div class="sc-lbl">Total</div><div class="sc-val">177.07</div></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    <nav class="page-sub-nav">
+      <a class="page-sub-a active" href="index.html">All Athletes</a>
+      <a class="page-sub-a" href="#">Ladies Singles</a>
+      <a class="page-sub-a" href="#">Men's Singles</a>
+      <a class="page-sub-a" href="#">Ice Dance</a>
+      <a class="page-sub-a" href="#">Pairs</a>
+    </nav>
   </div>
 </div>
 
-<!-- PROFILE PAGE -->
-<div id="profilePage" style="display:none;">
-
-  <div class="profile-banner">
-    <div class="profile-banner-inner">
-      <div class="profile-headshot">
-        <div class="profile-headshot-init" id="pInit"></div>
-        <div class="profile-headshot-note">PHOTO</div>
-      </div>
-      <div class="profile-text">
-        <div class="profile-disc-tag" id="pDisc"></div>
-        <div class="profile-name" id="pName"></div>
-        <div class="profile-pron" id="pPron"></div>
-        <div class="profile-chips" id="pChips"></div>
-      </div>
+<div class="wrap">
+  <div class="roster-toolbar">
+    <div class="filter-group">
+      <span class="filter-lbl">Discipline:</span>
+      <button class="fbtn on">Senior Ladies</button>
     </div>
+    <div class="roster-count">5 athletes</div>
   </div>
 
-  <div class="profile-subbar">
-    <div class="profile-subbar-inner">
-      <div class="profile-tabs">
-        <span class="ptab active">Bio</span>
-        <span class="ptab">Results</span>
-        <span class="ptab">Programs</span>
+  <div class="grid">
+
+    <a class="card" href="amber-glenn.html">
+      <div class="card-photo">
+        <img src="images/amber-glenn.jpg" alt="Amber Glenn" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-photo-init" style="display:none">AG</div>
+        <div class="badge-level">Senior</div>
+        <div class="badge-disc">Ladies Singles</div>
       </div>
-      <button class="back-btn" onclick="closeProfile()">&#8592; Back to Roster</button>
-    </div>
-  </div>
-
-  <div class="profile-body">
-    <div class="sidebar">
-
-      <div class="scard">
-        <div class="scard-head">Personal Info</div>
-        <div id="sPersonal"></div>
-      </div>
-
-      <div class="scard">
-        <div class="scard-head">Training</div>
-        <div id="sTraining"></div>
-      </div>
-
-      <div class="scard">
-        <div class="scard-head">Personal Bests</div>
-        <div class="pb-row">
-          <div class="pb-cell"><div class="pb-lbl">Short Program</div><div class="pb-num" id="pSP"></div></div>
-          <div class="pb-cell"><div class="pb-lbl">Free Skate</div><div class="pb-num" id="pFS"></div></div>
-          <div class="pb-cell"><div class="pb-lbl">Total</div><div class="pb-num" id="pTot"></div></div>
+      <div class="card-body">
+        <div class="card-name">Amber Glenn</div>
+        <div class="card-pron">She/Her</div>
+        <div class="card-hometown">Plano, TX</div>
+        <div class="card-scores">
+          <div class="sc"><div class="sc-lbl">SP PB</div><div class="sc-val">81.97</div></div>
+          <div class="sc"><div class="sc-lbl">FS PB</div><div class="sc-val">155.36</div></div>
+          <div class="sc"><div class="sc-lbl">Total</div><div class="sc-val">232.56</div></div>
         </div>
       </div>
+    </a>
 
-    </div>
-
-    <div class="mcontent">
-
-      <div class="mcard">
-        <div class="mcard-head">Bio</div>
-        <div class="mcard-body"><div class="bio-text" id="pBio"></div></div>
+    <a class="card" href="alysa-liu.html">
+      <div class="card-photo">
+        <img src="images/alysa-liu.jpg" alt="Alysa Liu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-photo-init" style="display:none">AL</div>
+        <div class="badge-level">Senior</div>
+        <div class="badge-disc">Ladies Singles</div>
       </div>
-
-      <div class="mcard">
-        <div class="mcard-head">Career Accomplishments</div>
-        <div class="mcard-body"><ul class="acc-list" id="pAcc"></ul></div>
+      <div class="card-body">
+        <div class="card-name">Alysa Liu</div>
+        <div class="card-pron">She/Her</div>
+        <div class="card-hometown">Oakland, CA</div>
+        <div class="card-scores">
+          <div class="sc"><div class="sc-lbl">SP PB</div><div class="sc-val">76.59</div></div>
+          <div class="sc"><div class="sc-lbl">FS PB</div><div class="sc-val">150.97</div></div>
+          <div class="sc"><div class="sc-lbl">Total</div><div class="sc-val">226.79</div></div>
+        </div>
       </div>
+    </a>
 
-      <div class="mcard">
-        <div class="mcard-head">2025–26 Season Programs</div>
-        <div class="mcard-body"><div class="prog-grid" id="pProgs"></div></div>
+    <a class="card" href="isabeau-levito.html">
+      <div class="card-photo">
+        <img src="images/isabeau-levito.jpg" alt="Isabeau Levito" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-photo-init" style="display:none">IL</div>
+        <div class="badge-level">Senior</div>
+        <div class="badge-disc">Ladies Singles</div>
       </div>
-
-      <div class="mcard">
-        <div class="mcard-head">Competition Results</div>
-        <table class="rtable">
-          <thead>
-            <tr>
-              <th>Competition</th>
-              <th>Season</th>
-              <th>Level</th>
-              <th>Place</th>
-            </tr>
-          </thead>
-          <tbody id="pRes"></tbody>
-        </table>
+      <div class="card-body">
+        <div class="card-name">Isabeau Levito</div>
+        <div class="card-pron">She/Her</div>
+        <div class="card-hometown">Mount Holly, NJ</div>
+        <div class="card-scores">
+          <div class="sc"><div class="sc-lbl">SP PB</div><div class="sc-val">77.84</div></div>
+          <div class="sc"><div class="sc-lbl">FS PB</div><div class="sc-val">149.55</div></div>
+          <div class="sc"><div class="sc-lbl">Total</div><div class="sc-val">224.45</div></div>
+        </div>
       </div>
+    </a>
 
-    </div>
+    <a class="card" href="starr-andrews.html">
+      <div class="card-photo">
+        <img src="images/starr-andrews.jpg" alt="Starr Andrews" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-photo-init" style="display:none">SA</div>
+        <div class="badge-level">Senior</div>
+        <div class="badge-disc">Ladies Singles</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Starr Andrews</div>
+        <div class="card-pron">She/Her</div>
+        <div class="card-hometown">Los Angeles, CA</div>
+        <div class="card-scores">
+          <div class="sc"><div class="sc-lbl">SP PB</div><div class="sc-val">67.15</div></div>
+          <div class="sc"><div class="sc-lbl">FS PB</div><div class="sc-val">130.22</div></div>
+          <div class="sc"><div class="sc-lbl">Total</div><div class="sc-val">194.48</div></div>
+        </div>
+      </div>
+    </a>
+
+    <a class="card" href="gabriela-juarez-rivas.html">
+      <div class="card-photo">
+        <img src="images/gabriela-juarez-rivas.jpg" alt="Gabriela Juarez-Rivas" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-photo-init" style="display:none">GJR</div>
+        <div class="badge-level">Senior</div>
+        <div class="badge-disc">Ladies Singles</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Gabriela Juarez-Rivas</div>
+        <div class="card-pron">She/Her</div>
+        <div class="card-hometown">Mountain View, CA</div>
+        <div class="card-scores">
+          <div class="sc"><div class="sc-lbl">SP PB</div><div class="sc-val">76.26</div></div>
+          <div class="sc"><div class="sc-lbl">FS PB</div><div class="sc-val">148.81</div></div>
+          <div class="sc"><div class="sc-lbl">Total</div><div class="sc-val">225.07</div></div>
+        </div>
+      </div>
+    </a>
+
   </div>
 </div>
 
-<script>
-const athletes = {
-  gjr: {
-    init:'GJR', name:'Gabriela Juarez Rivas', pron:'She / Her',
-    disc:'Ladies Singles', level:'Junior', country:'United States',
-    dob:'Add date of birth', height:'Add height',
-    hometown:'Add hometown', born:'Add place of birth',
-    started:'Add year', club:'Add club name', hobbies:'Add hobbies',
-    coach:'Add coach', formerCoach:'N/A', choreo:'Add choreographer',
-    lowRink:'Add off-season rink', highRink:'Add in-season rink',
-    sp:'56.12', fs:'112.44', tot:'168.56',
-    bio:'Gabriela Juarez Rivas is a US figure skater competing in ladies singles. Add her full biography here — when she began skating, her training background, coaches, notable performances, and what she hopes to achieve in the upcoming season.',
-    acc:[
-      'Add career accomplishment',
-      'Add career accomplishment',
-      'Add career accomplishment',
-    ],
-    progs:[
-      {type:'Short Program', music:'Add music title', by:'Add artist / composer'},
-      {type:'Free Skate', music:'Add music title', by:'Add artist / composer'},
-    ],
-    results:[
-      {comp:'Add competition', season:'2024–25', level:'Junior', place:0},
-    ]
-  },
-  en: {
-    init:'EN', name:'Emilie Nemirovsky', pron:'She / Her',
-    disc:'Ladies Singles', level:'Junior', country:'United States',
-    dob:'Add date of birth', height:'Add height',
-    hometown:'Add hometown', born:'Add place of birth',
-    started:'Add year', club:'Add club name', hobbies:'Add hobbies',
-    coach:'Add coach', formerCoach:'N/A', choreo:'Add choreographer',
-    lowRink:'Add off-season rink', highRink:'Add in-season rink',
-    sp:'58.77', fs:'118.30', tot:'177.07',
-    bio:'Emilie Nemirovsky is a US figure skater competing in ladies singles. Add her full biography here — when she began skating, her training background, coaches, notable performances, and what she hopes to achieve in the upcoming season.',
-    acc:[
-      'Add career accomplishment',
-      'Add career accomplishment',
-      'Add career accomplishment',
-    ],
-    progs:[
-      {type:'Short Program', music:'Add music title', by:'Add artist / composer'},
-      {type:'Free Skate', music:'Add music title', by:'Add artist / composer'},
-    ],
-    results:[
-      {comp:'Add competition', season:'2024–25', level:'Junior', place:0},
-    ]
-  }
-};
-
-function srow(label, val) {
-  return `<div class="srow"><span class="slbl">${label}</span><span class="sval">${val}</span></div>`;
-}
-function placeHTML(n) {
-  if (n === 0) return `<span class="pln">—</span>`;
-  const s = n===1?'st':n===2?'nd':n===3?'rd':'th';
-  const c = n===1?'pl1':n===2?'pl2':n===3?'pl3':'pln';
-  return `<span class="pl ${c}">${n}${s}</span>`;
-}
-
-function openProfile(id) {
-  const a = athletes[id]; if (!a) return;
-  document.getElementById('pInit').textContent = a.init;
-  document.getElementById('pDisc').textContent = a.disc;
-  document.getElementById('pName').textContent = a.name;
-  document.getElementById('pPron').textContent = a.pron;
-  document.getElementById('pChips').innerHTML =
-    `<div class="chip">🇺🇸 ${a.country}</div><div class="chip">${a.level}</div><div class="chip">${a.hometown}</div>`;
-  document.getElementById('sPersonal').innerHTML =
-    srow('Date of birth', a.dob) + srow('Height', a.height) +
-    srow('Hometown', a.hometown) + srow('Place of birth', a.born) +
-    srow('Started skating', a.started) + srow('Club', a.club) + srow('Hobbies', a.hobbies);
-  document.getElementById('sTraining').innerHTML =
-    srow('Coach', a.coach) + srow('Former coach', a.formerCoach) +
-    srow('Choreographer', a.choreo) + srow('Off-season rink', a.lowRink) + srow('In-season rink', a.highRink);
-  document.getElementById('pSP').textContent = a.sp;
-  document.getElementById('pFS').textContent = a.fs;
-  document.getElementById('pTot').textContent = a.tot;
-  document.getElementById('pBio').textContent = a.bio;
-  document.getElementById('pAcc').innerHTML = a.acc.map(x =>
-    `<li class="acc-item"><div class="acc-dot"></div><div class="acc-txt">${x}</div></li>`).join('');
-  document.getElementById('pProgs').innerHTML = a.progs.map(p =>
-    `<div class="prog"><div class="prog-type">${p.type}</div><div class="prog-music">${p.music}</div><div class="prog-artist">${p.by}</div></div>`).join('');
-  document.getElementById('pRes').innerHTML = a.results.map(r =>
-    `<tr><td>${r.comp}</td><td>${r.season}</td><td>${r.level}</td><td>${placeHTML(r.place)}</td></tr>`).join('');
-  document.getElementById('rosterPage').style.display = 'none';
-  document.getElementById('profilePage').style.display = 'block';
-  window.scrollTo(0, 0);
-}
-function closeProfile() {
-  document.getElementById('rosterPage').style.display = 'block';
-  document.getElementById('profilePage').style.display = 'none';
-  window.scrollTo(0, 0);
-}
-</script>
 </body>
 </html>
