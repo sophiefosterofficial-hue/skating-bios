@@ -200,8 +200,8 @@ table.rtable { width: 100%; border-collapse: collapse; font-size: 12px; margin-t
 .home-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
 .home-card { text-decoration: none; display: block; }
 .home-card-photo { aspect-ratio: 3/4; background: var(--gray-100); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.home-card-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; position: absolute; inset: 0; }
-.home-card-init { font-size: 22px; font-weight: 700; color: var(--gray-300); }
+.home-card-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; position: absolute; inset: 0; z-index: 2; }
+.home-card-init { font-size: 22px; font-weight: 700; color: rgba(255,255,255,0.2); z-index: 1; }
 .home-card-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(11,34,101,0.92) 0%, transparent 100%); padding: 28px 10px 10px; }
 .home-card-name { font-size: 13px; font-weight: 700; color: white; line-height: 1.25; }
 .home-card-disc { font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 2px; }
@@ -226,7 +226,7 @@ table.rtable { width: 100%; border-collapse: collapse; font-size: 12px; margin-t
 .roster-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.08); }
 .roster-card:hover .roster-card-name { color: var(--red); }
 .roster-card-photo { aspect-ratio: 3/4; background: var(--gray-100); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.roster-card-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; position: absolute; inset: 0; }
+.roster-card-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; position: absolute; inset: 0; z-index: 2; }
 .roster-card-init { font-size: 22px; font-weight: 700; color: var(--gray-300); z-index: 1; }
 .roster-card-body { padding: 10px 12px 12px; border-top: 2px solid var(--red); }
 .roster-card-name { font-size: 13px; font-weight: 700; color: var(--gray-800); line-height: 1.25; margin-bottom: 2px; transition: color 0.1s; }
