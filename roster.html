@@ -8,6 +8,11 @@
 <meta name="description" content="The 2025-26 US figure skating Olympic team roster with athlete profiles, bios and results.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+.disc-section { display: none; }
+.disc-section.active { display: block; }
+.page-sub-a { cursor: pointer; }
+</style>
 </head>
 <body>
 <nav class="nav">
@@ -21,11 +26,10 @@
     <div class="breadcrumb"><a href="index.html">Home</a> › Roster</div>
     <div class="page-title">2026 Olympic Team Profiles</div>
     <nav class="page-sub-nav">
-      <a class="page-sub-a active" href="roster.html">All Athletes</a>
-      <a class="page-sub-a" href="#">Ladies Singles</a>
-      <a class="page-sub-a" href="#">Men's Singles</a>
-      <a class="page-sub-a" href="#">Ice Dance</a>
-      <a class="page-sub-a" href="#">Pairs</a>
+      <span class="page-sub-a active" onclick="showDisc('ladies')">Ladies Singles</span>
+      <span class="page-sub-a" onclick="showDisc('men')">Men's Singles</span>
+      <span class="page-sub-a" onclick="showDisc('dance')">Ice Dance</span>
+      <span class="page-sub-a" onclick="showDisc('pairs')">Pairs</span>
     </nav>
   </div>
 </div>
@@ -33,7 +37,7 @@
 <div class="wrap">
 
   <!-- LADIES -->
-  <div style="margin-bottom: 2rem;">
+  <div class="disc-section active" id="disc-ladies">
     <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#999;padding-bottom:8px;border-bottom:2px solid #DA291C;margin-bottom:1rem;">Ladies Singles</div>
     <div class="roster-grid">
       <a class="roster-card" href="amber-glenn.html"><div class="roster-card-photo"><img src="images/amber-glenn.jpg" alt="Amber Glenn" onerror="this.style.display='none'"><div class="roster-card-init">AG</div></div><div class="roster-card-body"><div class="roster-card-name">Amber Glenn</div><div class="roster-card-disc">Senior · Ladies Singles</div></div></a>
@@ -45,7 +49,7 @@
   </div>
 
   <!-- MEN -->
-  <div style="margin-bottom: 2rem;">
+  <div class="disc-section" id="disc-men">
     <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#999;padding-bottom:8px;border-bottom:2px solid #DA291C;margin-bottom:1rem;">Men's Singles</div>
     <div class="roster-grid">
       <a class="roster-card" href="ilia-malinin.html"><div class="roster-card-photo"><img src="images/ilia-malinin.jpg" alt="Ilia Malinin" onerror="this.style.display='none'"><div class="roster-card-init">IM</div></div><div class="roster-card-body"><div class="roster-card-name">Ilia Malinin</div><div class="roster-card-disc">Senior · Men's Singles</div></div></a>
@@ -55,7 +59,7 @@
   </div>
 
   <!-- ICE DANCE -->
-  <div style="margin-bottom: 2rem;">
+  <div class="disc-section" id="disc-dance">
     <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#999;padding-bottom:8px;border-bottom:2px solid #DA291C;margin-bottom:1rem;">Ice Dance</div>
     <div class="roster-grid">
       <a class="roster-card" href="madison-chock-evan-bates.html"><div class="roster-card-photo"><img src="images/chock-bates.jpg" alt="Madison Chock and Evan Bates" onerror="this.style.display='none'"><div class="roster-card-init">C/B</div></div><div class="roster-card-body"><div class="roster-card-name">Madison Chock & Evan Bates</div><div class="roster-card-disc">Senior · Ice Dance</div></div></a>
@@ -65,7 +69,7 @@
   </div>
 
   <!-- PAIRS -->
-  <div style="margin-bottom: 2rem;">
+  <div class="disc-section" id="disc-pairs">
     <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#999;padding-bottom:8px;border-bottom:2px solid #DA291C;margin-bottom:1rem;">Pairs</div>
     <div class="roster-grid">
       <a class="roster-card" href="ellie-kam-danny-oshea.html"><div class="roster-card-photo"><img src="images/kam-oshea.jpg" alt="Ellie Kam and Danny O'Shea" onerror="this.style.display='none'"><div class="roster-card-init">K/O</div></div><div class="roster-card-body"><div class="roster-card-name">Ellie Kam & Danny O'Shea</div><div class="roster-card-disc">Senior · Pairs</div></div></a>
@@ -74,5 +78,15 @@
   </div>
 
 </div>
+
+<script>
+function showDisc(disc) {
+  document.querySelectorAll('.disc-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.page-sub-a').forEach(a => a.classList.remove('active'));
+  document.getElementById('disc-' + disc).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo(0, 0);
+}
+</script>
 </body>
 </html>
