@@ -9,13 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-/* NEWS PAGE SPECIFIC */
 .news-hero { background: var(--white); border-bottom: 1px solid var(--gray-200); }
-.news-hero-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1fr 340px; min-height: 420px; }
-
-/* Featured story */
-.news-featured { position: relative; overflow: hidden; background: var(--navy); display: flex; align-items: flex-end; min-height: 420px; cursor: pointer; text-decoration: none; }
-.news-featured img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: 0.7; }
+.news-hero-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1fr 320px; min-height: 400px; }
+.news-featured { position: relative; overflow: hidden; background: var(--navy); display: flex; align-items: flex-end; min-height: 400px; text-decoration: none; }
+.news-featured img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
 .news-featured-placeholder { position: absolute; inset: 0; background: linear-gradient(135deg, #0B2265, #1a3a8f); display: flex; align-items: center; justify-content: center; }
 .news-featured-placeholder span { color: rgba(255,255,255,0.12); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
 .news-featured-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.1) 55%, transparent 100%); }
@@ -24,40 +21,34 @@
 .news-featured-title { font-size: 24px; font-weight: 700; color: white; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 8px; }
 .news-featured-date { font-size: 11px; color: rgba(255,255,255,0.5); }
 .news-featured:hover .news-featured-title { text-decoration: underline; }
-
-/* Side list */
 .news-side { border-left: 1px solid var(--gray-200); display: flex; flex-direction: column; }
 .news-side-head { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: var(--gray-400); padding: 14px 16px 10px; border-bottom: 1px solid var(--gray-200); }
-.news-side-item { display: block; text-decoration: none; padding: 12px 16px; border-bottom: 1px solid var(--gray-100); transition: background 0.1s; flex: 1; }
-.news-side-item:last-child { border-bottom: none; }
+.news-side-item { display: block; text-decoration: none; padding: 12px 16px; border-bottom: 1px solid var(--gray-100); flex: 1; transition: background 0.1s; }
 .news-side-item:hover { background: var(--gray-50); }
 .news-side-item:hover .news-side-title { color: var(--red); }
 .news-side-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--red); margin-bottom: 4px; }
 .news-side-title { font-size: 13px; font-weight: 600; color: var(--gray-800); line-height: 1.4; margin-bottom: 4px; transition: color 0.1s; }
 .news-side-date { font-size: 11px; color: var(--gray-400); }
-
-/* News grid */
 .news-wrap { max-width: 1060px; margin: 0 auto; padding: 2rem 1.5rem; }
-.news-section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; padding-bottom: 8px; border-bottom: 2px solid var(--red); }
+.news-section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; padding-bottom: 8px; border-bottom: 2px solid var(--red); flex-wrap: wrap; gap: 10px; }
 .news-section-title { font-size: 14px; font-weight: 700; color: var(--navy); }
-.news-filter-group { display: flex; gap: 6px; }
-.news-filter { padding: 4px 12px; font-size: 11px; font-weight: 500; border: 1px solid var(--gray-200); color: var(--gray-600); cursor: pointer; background: var(--white); font-family: var(--font); border-radius: 20px; }
+.news-filter-group { display: flex; gap: 6px; flex-wrap: wrap; }
+.news-filter { padding: 4px 12px; font-size: 11px; font-weight: 500; border: 1px solid var(--gray-200); color: var(--gray-600); cursor: pointer; background: var(--white); font-family: var(--font); border-radius: 20px; transition: all 0.1s; }
 .news-filter:hover { border-color: var(--red); color: var(--red); }
 .news-filter.on { background: var(--red); border-color: var(--red); color: white; }
-
 .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .news-card { text-decoration: none; display: block; background: var(--white); border: 1px solid var(--gray-200); transition: box-shadow 0.15s; }
 .news-card:hover { box-shadow: 0 3px 14px rgba(0,0,0,0.08); }
 .news-card:hover .news-card-title { color: var(--red); }
-.news-card-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--gray-100); }
+.news-card.hidden { display: none; }
 .news-card-img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--gray-100); display: flex; align-items: center; justify-content: center; }
 .news-card-img-placeholder span { font-size: 11px; color: var(--gray-300); letter-spacing: 0.05em; text-transform: uppercase; }
+.news-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
 .news-card-body { padding: 12px 14px 14px; }
 .news-card-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--red); margin-bottom: 5px; }
 .news-card-title { font-size: 14px; font-weight: 600; color: var(--gray-800); line-height: 1.4; margin-bottom: 6px; transition: color 0.1s; }
 .news-card-excerpt { font-size: 12px; color: var(--gray-400); line-height: 1.6; margin-bottom: 8px; }
 .news-card-meta { font-size: 11px; color: var(--gray-400); }
-
 @media (max-width: 700px) {
   .news-hero-inner { grid-template-columns: 1fr; }
   .news-side { border-left: none; border-top: 1px solid var(--gray-200); }
@@ -68,47 +59,28 @@
 </style>
 </head>
 <body>
-<nav class="nav">
-  <a class="nav-logo" href="index.html"><img src="images/logo.png" alt="US Figure Skating News" style="height:36px;width:auto;"><div class="nav-logo-text" style="display:none">US Figure Skating News</div></a>
-  <div class="nav-links"><a class="nav-a" href="index.html">Home</a><a class="nav-a" href="roster.html">Roster</a><a class="nav-a active" href="news.html">News</a><a class="nav-a" href="#">Results</a><a class="nav-a" href="about.html">About</a></div>
-</nav>
-<div class="sport-bar"><span class="sport-bar-label">Figure Skating</span><span class="sport-bar-link">News ›</span></div>
+<nav class="nav"><a class="nav-logo" href="index.html"><img src="images/logo.png" alt="US Figure Skating News" style="height:36px;width:auto;"><div class="nav-logo-text" style="display:none">US Figure Skating News</div></a><div class="nav-links"><a class="nav-a" href="index.html">Home</a><a class="nav-a" href="roster.html">Roster</a><a class="nav-a active" href="news.html">News</a><a class="nav-a" href="#">Results</a><a class="nav-a" href="about.html">About</a></div></nav>
+<div class="sport-bar"><span class="sport-bar-label">Figure Skating</span><a class="sport-bar-link" href="news.html">News ›</a></div>
 
 <!-- FEATURED + SIDE -->
 <div class="news-hero">
   <div class="news-hero-inner">
-    <a class="news-featured" href="#">
+    <a class="news-featured" href="article-liu-olympic-gold.html">
       <div class="news-featured-placeholder"><span>Add featured photo</span></div>
-      <img src="images/news-featured.jpg" alt="Featured story" onerror="this.style.display='none'">
+      <img src="images/article-liu-gold.jpg" alt="Alysa Liu Olympic gold" onerror="this.style.display='none'">
       <div class="news-featured-overlay"></div>
       <div class="news-featured-text">
         <div class="news-featured-tag">Olympic Results</div>
-        <div class="news-featured-title">Alysa Liu Claims Olympic Gold, Team USA Repeats as Team Champions in Milan</div>
+        <div class="news-featured-title">Liu Reigns Golden in Milan</div>
         <div class="news-featured-date">February 19, 2026</div>
       </div>
     </a>
     <div class="news-side">
       <div class="news-side-head">Latest Stories</div>
-      <a class="news-side-item" href="article-worlds-malinin-gold.html">
-        <div class="news-side-tag">World Championships</div>
-        <div class="news-side-title">Malinin Earns Redemption with Third Consecutive World Title</div>
-        <div class="news-side-date">March 28, 2026</div>
-      </a>
-      <a class="news-side-item" href="article-worlds-women.html">
-        <div class="news-side-tag">World Championships</div>
-        <div class="news-side-title">Levito, Glenn Secure Three U.S. Spots at 2027 Worlds; Juarez-Rivas Claims Bronze</div>
-        <div class="news-side-date">March 27, 2026</div>
-      </a>
-      <a class="news-side-item" href="#">
-        <div class="news-side-tag">Ice Dance</div>
-        <div class="news-side-title">Zingas and Kolesnik Win World Bronze in Stunning Debut at World Championships</div>
-        <div class="news-side-date">March 28, 2026</div>
-      </a>
-      <a class="news-side-item" href="#">
-        <div class="news-side-tag">Feature</div>
-        <div class="news-side-title">Chock and Bates Earn Long-Awaited Individual Olympic Medal with Silver in Ice Dance</div>
-        <div class="news-side-date">February 11, 2026</div>
-      </a>
+      <a class="news-side-item" href="article-worlds-malinin-gold.html"><div class="news-side-tag">World Championships</div><div class="news-side-title">Malinin Earns Redemption with Third Consecutive World Title</div><div class="news-side-date">March 28, 2026</div></a>
+      <a class="news-side-item" href="article-worlds-women.html"><div class="news-side-tag">World Championships</div><div class="news-side-title">Levito, Glenn Secure Three U.S. Spots; Juarez-Rivas Claims Bronze in Prague</div><div class="news-side-date">March 27, 2026</div></a>
+      <a class="news-side-item" href="article-chock-bates-silver.html"><div class="news-side-tag">Ice Dance</div><div class="news-side-title">Chock and Bates Secure First Individual Olympic Medal with Silver in Ice Dance</div><div class="news-side-date">February 11, 2026</div></a>
+      <a class="news-side-item" href="article-gabriela-juarez-rivas.html"><div class="news-side-tag">Athletes</div><div class="news-side-title">From Olympic Alternate to World Medalist, Gabriela Juarez-Rivas Is Finally Ready to Tell Her Story</div><div class="news-side-date">May 2026</div></a>
     </div>
   </div>
 </div>
@@ -118,108 +90,108 @@
   <div class="news-section-header">
     <div class="news-section-title">All Stories</div>
     <div class="news-filter-group">
-      <button class="news-filter on">All</button>
-      <button class="news-filter">Competition</button>
-      <button class="news-filter">Feature</button>
-      <button class="news-filter">Athletes</button>
-      <button class="news-filter">Results</button>
+      <button class="news-filter on" onclick="filterNews('all', this)">All</button>
+      <button class="news-filter" onclick="filterNews('olympics', this)">Olympics</button>
+      <button class="news-filter" onclick="filterNews('worlds', this)">World Championships</button>
+      <button class="news-filter" onclick="filterNews('nationals', this)">U.S. Championships</button>
+      <button class="news-filter" onclick="filterNews('grandprix', this)">Grand Prix</button>
+      <button class="news-filter" onclick="filterNews('athletes', this)">Athletes</button>
+      <button class="news-filter" onclick="filterNews('tour', this)">Tour</button>
     </div>
   </div>
 
   <div class="news-grid">
 
-    <a class="news-card" href="article-malinin-falls.html">
+    <a class="news-card" href="article-gabriela-juarez-rivas.html" data-cat="athletes">
       <div class="news-card-img-placeholder"><span>Add photo</span></div>
-      <div class="news-card-body">
-        <div class="news-card-tag">Olympic Results</div>
-        <div class="news-card-title">Malinin Falls Twice, Finishes Eighth in Stunning Olympic Upset</div>
-        <div class="news-card-excerpt">The heavy gold medal favorite fell twice during the free skate in Milan, ending a two-year unbeaten streak in one of the sport's most shocking nights.</div>
-        <div class="news-card-meta">February 13, 2026</div>
-      </div>
+      <div class="news-card-body"><div class="news-card-tag">Athletes</div><div class="news-card-title">From Olympic Alternate to World Medalist, Gabriela Juarez-Rivas Is Finally Ready to Tell Her Story</div><div class="news-card-excerpt">The 18-year-old opens up about two years of hard seasons, missing the Milan Olympics, and what kept her going.</div><div class="news-card-meta">May 2026</div></div>
     </a>
 
-    <a class="news-card" href="article-naumov-olympic-team.html">
+    <a class="news-card" href="article-worlds-malinin-gold.html" data-cat="worlds">
       <div class="news-card-img-placeholder"><span>Add photo</span></div>
-      <div class="news-card-body">
-        <div class="news-card-tag">Feature</div>
-        <div class="news-card-title">Naumov Fulfills Parents' Dream with Olympic Team Selection</div>
-        <div class="news-card-excerpt">Less than a year after losing his parents in the Washington D.C. plane crash, Maxim Naumov earned his spot on the 2026 Olympic team in an emotional moment in St. Louis.</div>
-        <div class="news-card-meta">January 12, 2026</div>
-      </div>
+      <div class="news-card-body"><div class="news-card-tag">World Championships</div><div class="news-card-title">Malinin Earns Redemption with Third Consecutive World Title</div><div class="news-card-excerpt">The "Quad God" outpaced the field by nearly 23 points in Prague, winning his third straight World title with a total score of 329.40.</div><div class="news-card-meta">March 28, 2026</div></div>
     </a>
 
-    <a class="news-card" href="article-glenn-nationals.html">
+    <a class="news-card" href="article-worlds-women.html" data-cat="worlds">
       <div class="news-card-img-placeholder"><span>Add photo</span></div>
-      <div class="news-card-body">
-        <div class="news-card-tag">National Championships</div>
-        <div class="news-card-title">Glenn Wins Third Straight US Title; Liu and Levito Complete Historic Women's Podium</div>
-        <div class="news-card-excerpt">Amber Glenn captured her third consecutive national championship in St. Louis, joined on the podium by Alysa Liu and Isabeau Levito ahead of the Milan Olympics.</div>
-        <div class="news-card-meta">January 10, 2026</div>
-      </div>
+      <div class="news-card-body"><div class="news-card-tag">World Championships</div><div class="news-card-title">Levito, Glenn Secure Three U.S. Spots; Juarez-Rivas Claims Bronze in Prague</div><div class="news-card-excerpt">Gabriela Juarez-Rivas delivered the breakthrough performance of the season with a Carmen free skate that earned her first senior World medal.</div><div class="news-card-meta">March 27, 2026</div></div>
     </a>
 
-    <a class="news-card" href="article-zingas-kolesnik-breakout.html">
+    <a class="news-card" href="article-stars-on-ice-2026.html" data-cat="tour">
       <div class="news-card-img-placeholder"><span>Add photo</span></div>
-      <div class="news-card-body">
-        <div class="news-card-tag">Ice Dance</div>
-        <div class="news-card-title">Zingas and Kolesnik: The Breakout Story of the 2026 Milan Olympics</div>
-        <div class="news-card-excerpt">In their first Olympic Games together, Emilea Zingas and Vadym Kolesnik became the only debutant ice dance team to finish in the top five — a result that shocked even them.</div>
-        <div class="news-card-meta">February 12, 2026</div>
-      </div>
+      <div class="news-card-body"><div class="news-card-tag">Tour</div><div class="news-card-title">Olympic Champions Headline 2026 Stifel Stars on Ice Tour</div><div class="news-card-excerpt">Alysa Liu, Ilia Malinin, Chock and Bates lead a 28-city tour with guest performers including Zingas/Kolesnik, Carreira/Ponomarenko, and Gabriela Juarez-Rivas.</div><div class="news-card-meta">March 5, 2026</div></div>
     </a>
 
-    <a class="news-card" href="article-stars-on-ice-2026.html">
+    <a class="news-card" href="article-liu-olympic-gold.html" data-cat="olympics">
       <div class="news-card-img-placeholder"><span>Add photo</span></div>
-      <div class="news-card-body">
-        <div class="news-card-tag">Competition</div>
-        <div class="news-card-title">US Sends Full Slate of Skaters to 2026 World Championships in Prague</div>
-        <div class="news-card-excerpt">For the first time since 2023, the United States will send the maximum 18 athletes to the ISU World Figure Skating Championships, including 10 Olympians.</div>
-        <div class="news-card-meta">March 23, 2026</div>
-      </div>
+      <div class="news-card-body"><div class="news-card-tag">Olympics</div><div class="news-card-title">Liu Reigns Golden in Milan</div><div class="news-card-excerpt">Alysa Liu capped her unlikely comeback with the first U.S. women's Olympic singles gold since Sarah Hughes in 2002.</div><div class="news-card-meta">February 19, 2026</div></div>
     </a>
 
-    <a class="news-card" href="article-gabriela-juarez-rivas.html">
+    <a class="news-card" href="article-chock-bates-silver.html" data-cat="olympics">
       <div class="news-card-img-placeholder"><span>Add photo</span></div>
-      <div class="news-card-body">
-        <div class="news-card-tag">Feature</div>
-        <div class="news-card-title">Stars on Ice 2026: Team USA's Olympic Champions Take the Tour</div>
-        <div class="news-card-excerpt">Fresh off their historic performances in Milan, the US Olympic figure skating team brings the magic of the Games to arenas across the country this spring.</div>
-        <div class="news-card-meta">Add date</div>
-      </div>
+      <div class="news-card-body"><div class="news-card-tag">Olympics</div><div class="news-card-title">Chock and Bates Secure First Individual Olympic Medal with Silver in Ice Dance</div><div class="news-card-excerpt">After finishing fourth in Beijing, America's most decorated ice dance team finally claimed their individual Olympic podium moment.</div><div class="news-card-meta">February 11, 2026</div></div>
     </a>
 
-    <a class="news-card" href="article-chock-bates-silver.html">
+    <a class="news-card" href="article-four-continents-2026.html" data-cat="grandprix">
       <div class="news-card-img-placeholder"><span>Add photo</span></div>
-      <div class="news-card-body">
-        <div class="news-card-tag">Athletes</div>
-        <div class="news-card-title">Gabriela Juarez-Rivas: From World Junior Champion to World Bronze Medalist</div>
-        <div class="news-card-excerpt">At just 17, Gabriela Juarez-Rivas delivered the performance of her career in Prague — a Carmen free skate that earned her the first World Championship medal of her senior career.</div>
-        <div class="news-card-meta">Add date</div>
-      </div>
+      <div class="news-card-body"><div class="news-card-tag">Competition</div><div class="news-card-title">Zingas and Kolesnik Win Four Continents Gold; Levito Earns Bronze Ahead of Milan</div><div class="news-card-excerpt">The Detroit-area ice dance team claims their first major international title just weeks before the Olympic Winter Games.</div><div class="news-card-meta">February 3, 2026</div></div>
     </a>
 
-    <a class="news-card" href="article-team-event-gold.html">
+    <a class="news-card" href="article-malinin-falls.html" data-cat="olympics">
       <div class="news-card-img-placeholder"><span>Add photo</span></div>
-      <div class="news-card-body">
-        <div class="news-card-tag">National Championships</div>
-        <div class="news-card-title">Chock and Bates Win Record Seventh US Ice Dance Title Ahead of Milan</div>
-        <div class="news-card-excerpt">The seven-time US champions set a new record for most consecutive podium finishes at nationals in any discipline, surpassing Michelle Kwan's legendary streak.</div>
-        <div class="news-card-meta">January 11, 2026</div>
-      </div>
+      <div class="news-card-body"><div class="news-card-tag">Olympics</div><div class="news-card-title">Malinin Finishes Eighth in Olympic Debut</div><div class="news-card-excerpt">The heavy gold medal favorite faltered on four of his seven planned quadruple jumps, ending a 14-competition unbeaten streak.</div><div class="news-card-meta">February 13, 2026</div></div>
     </a>
 
-    <a class="news-card" href="#">
+    <a class="news-card" href="article-naumov-olympic-team.html" data-cat="athletes">
       <div class="news-card-img-placeholder"><span>Add photo</span></div>
-      <div class="news-card-body">
-        <div class="news-card-tag">Olympic Results</div>
-        <div class="news-card-title">Team USA Wins Olympic Team Event Gold for Second Consecutive Games</div>
-        <div class="news-card-excerpt">In a dramatic finale, Ilia Malinin's free skate edged out Japan to give the United States back-to-back Olympic team event gold medals in Milan.</div>
-        <div class="news-card-meta">February 8, 2026</div>
-      </div>
+      <div class="news-card-body"><div class="news-card-tag">Athletes</div><div class="news-card-title">Naumov Fulfills Parents' Dream with Olympic Team Selection</div><div class="news-card-excerpt">Less than a year after losing his parents in the Washington D.C. plane crash, Maxim Naumov earned his spot on the 2026 Olympic team.</div><div class="news-card-meta">January 12, 2026</div></div>
+    </a>
+
+    <a class="news-card" href="article-glenn-nationals.html" data-cat="nationals">
+      <div class="news-card-img-placeholder"><span>Add photo</span></div>
+      <div class="news-card-body"><div class="news-card-tag">U.S. Championships</div><div class="news-card-title">Glenn Becomes First Woman to Win Three Consecutive U.S. Titles Since Michelle Kwan</div><div class="news-card-excerpt">Liu and Levito complete a historic women's podium at the 2026 Prevagen U.S. Figure Skating Championships in St. Louis.</div><div class="news-card-meta">January 10, 2026</div></div>
+    </a>
+
+    <a class="news-card" href="article-gpf-2025.html" data-cat="grandprix">
+      <div class="news-card-img-placeholder"><span>Add photo</span></div>
+      <div class="news-card-body"><div class="news-card-tag">Grand Prix</div><div class="news-card-title">Malinin, Liu and Chock and Bates Sweep Grand Prix Final in Vancouver</div><div class="news-card-excerpt">Five senior U.S. entries — the most since 2022 — combined for three gold medals at the most exclusive event in figure skating.</div><div class="news-card-meta">December 7, 2025</div></div>
+    </a>
+
+    <a class="news-card" href="article-skate-america-2025.html" data-cat="grandprix">
+      <div class="news-card-img-placeholder"><span>Add photo</span></div>
+      <div class="news-card-body"><div class="news-card-tag">Grand Prix</div><div class="news-card-title">Liu Wins Skate America, Chock and Bates Continue Dominant Season</div><div class="news-card-excerpt">Team USA earns two gold medals at Herb Brooks Arena in Lake Placid in front of a home crowd.</div><div class="news-card-meta">November 16, 2025</div></div>
+    </a>
+
+    <a class="news-card" href="article-team-event-gold.html" data-cat="olympics">
+      <div class="news-card-img-placeholder"><span>Add photo</span></div>
+      <div class="news-card-body"><div class="news-card-tag">Olympics</div><div class="news-card-title">Malinin Leads U.S. to Repeat Olympic Team Event Title</div><div class="news-card-excerpt">The United States becomes the first team to win consecutive Olympic golds in the team event.</div><div class="news-card-meta">February 8, 2026</div></div>
+    </a>
+
+    <a class="news-card" href="article-zingas-kolesnik-breakout.html" data-cat="athletes">
+      <div class="news-card-img-placeholder"><span>Add photo</span></div>
+      <div class="news-card-body"><div class="news-card-tag">Athletes</div><div class="news-card-title">Zingas and Kolesnik: The Breakout Story of the 2026 Milan Olympics</div><div class="news-card-excerpt">In just four years together, the Detroit-area team went from complete unknowns to Olympic finalists.</div><div class="news-card-meta">February 12, 2026</div></div>
+    </a>
+
+    <a class="news-card" href="article-finlandia-trophy-2025.html" data-cat="grandprix">
+      <div class="news-card-img-placeholder"><span>Add photo</span></div>
+      <div class="news-card-body"><div class="news-card-tag">Grand Prix</div><div class="news-card-title">U.S. Takes Home Four Medals at 2025 Finlandia Trophy; Juarez-Rivas Claims First Senior Grand Prix Medal</div><div class="news-card-excerpt">Glenn finishes second and Juarez-Rivas earns her first career senior Grand Prix podium with bronze in Helsinki.</div><div class="news-card-meta">November 22, 2025</div></div>
     </a>
 
   </div>
 </div>
 
+<script>
+function filterNews(cat, btn) {
+  document.querySelectorAll('.news-filter').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.news-card').forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+</script>
 </body>
 </html>
