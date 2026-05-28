@@ -277,3 +277,49 @@ table.rtable { width: 100%; border-collapse: collapse; font-size: 12px; margin-t
   .hero-feature-side { border-left: none; border-top: 1px solid var(--gray-200); }
   .hero-feature-img { min-height: 240px; }
 }
+
+/* ── ARTICLE PAGES ── */
+.article-page-wrap { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
+.article-breadcrumb { font-size: 11px; color: var(--gray-400); margin-bottom: 1rem; }
+.article-breadcrumb a { color: var(--gray-400); text-decoration: none; }
+.article-breadcrumb a:hover { color: var(--red); }
+.article-tag { display: inline-block; background: var(--red); color: white; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 8px; margin-bottom: 10px; }
+.article-title { font-size: 28px; font-weight: 700; color: var(--navy); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 8px; }
+.article-subtitle { font-size: 15px; color: var(--gray-600); line-height: 1.5; margin-bottom: 12px; }
+.article-meta { font-size: 12px; color: var(--gray-400); padding-bottom: 12px; border-bottom: 1px solid var(--gray-200); margin-bottom: 1.25rem; }
+.article-meta span { margin-right: 16px; }
+.article-hero-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; margin-bottom: 8px; background: var(--gray-100); }
+.article-hero-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--navy); display: flex; align-items: center; justify-content: center; margin-bottom: 8px; }
+.article-hero-placeholder span { color: rgba(255,255,255,0.2); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.article-caption { font-size: 11px; color: var(--gray-400); margin-bottom: 1.5rem; font-style: italic; }
+.article-body { font-size: 14px; line-height: 1.9; color: var(--gray-700); }
+.article-body p { margin-bottom: 1.1rem; }
+.article-body h2 { font-size: 18px; font-weight: 700; color: var(--navy); margin: 1.75rem 0 0.75rem; letter-spacing: -0.01em; }
+.article-body blockquote { border-left: 3px solid var(--red); margin: 1.25rem 0; padding: 0.5rem 0 0.5rem 1rem; color: var(--gray-600); font-style: italic; font-size: 15px; line-height: 1.7; }
+.article-body a { color: var(--red); text-decoration: none; }
+.article-tour-schedule { background: var(--gray-50); border: 1px solid var(--gray-200); padding: 1.25rem; margin: 1.5rem 0; }
+.article-tour-schedule h3 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-400); margin-bottom: 1rem; border-bottom: 1px solid var(--gray-200); padding-bottom: 8px; }
+.article-tour-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.article-tour-table tr { border-bottom: 1px solid var(--gray-100); }
+.article-tour-table tr:last-child { border-bottom: none; }
+.article-tour-table td { padding: 6px 8px; color: var(--gray-700); }
+.article-tour-table td:first-child { color: var(--gray-400); white-space: nowrap; min-width: 100px; }
+.tour-highlight td { font-weight: 600; color: var(--navy) !important; background: rgba(11,34,101,0.04); }
+.article-cast-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; margin: 1rem 0; }
+.article-cast-item { font-size: 13px; color: var(--gray-700); padding: 7px 10px; background: var(--gray-50); border: 1px solid var(--gray-100); }
+.article-cast-item strong { color: var(--navy); display: block; font-size: 12px; }
+.article-related { margin-top: 2.5rem; border-top: 2px solid var(--red); padding-top: 1.25rem; }
+.article-related-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 1rem; }
+.article-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.article-related-card { text-decoration: none; border: 1px solid var(--gray-200); display: block; }
+.article-related-card:hover .article-related-card-title { color: var(--red); }
+.article-related-card-img-ph { width: 100%; aspect-ratio: 16/9; background: var(--gray-100); display: block; }
+.article-related-card-body { padding: 10px 12px 12px; }
+.article-related-card-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--red); margin-bottom: 4px; }
+.article-related-card-title { font-size: 13px; font-weight: 600; color: var(--gray-800); line-height: 1.4; transition: color 0.1s; }
+@media (max-width: 600px) {
+  .article-related-grid { grid-template-columns: 1fr; }
+  .article-cast-grid { grid-template-columns: 1fr; }
+  .article-page-wrap { padding: 1rem; }
+  .article-title { font-size: 22px; }
+}
