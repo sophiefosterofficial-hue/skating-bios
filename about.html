@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="images/logo.png">
+<title>About — US Figure Skating News</title>
+<meta name="description" content="US Figure Skating News is a dedicated source for US figure skating athlete profiles, competition coverage, results, and news.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.about-body { max-width: 760px; margin: 0 auto; padding: 2rem 1.5rem; }
+.about-hero { background: var(--navy); padding: 3rem 1.5rem; text-align: center; }
+.about-hero-inner { max-width: 700px; margin: 0 auto; }
+.about-hero-tag { display: inline-block; background: var(--red); color: white; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 10px; margin-bottom: 14px; }
+.about-hero-title { font-size: 30px; font-weight: 700; color: white; letter-spacing: -0.02em; margin-bottom: 10px; }
+.about-hero-sub { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 520px; margin: 0 auto; }
+.about-section { margin-bottom: 2.5rem; }
+.about-section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: var(--gray-400); padding-bottom: 8px; border-bottom: 2px solid var(--red); margin-bottom: 1.25rem; }
+.about-text { font-size: 14px; line-height: 1.85; color: var(--gray-600); }
+.about-text + .about-text { margin-top: 12px; }
+.about-values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.25rem; }
+.about-value { background: var(--gray-50); border: 1px solid var(--gray-200); padding: 1.25rem; }
+.about-value-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.about-value-text { font-size: 12px; color: var(--gray-600); line-height: 1.6; }
+.about-coverage { list-style: none; margin-top: 1rem; }
+.about-coverage li { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--gray-100); font-size: 13px; color: var(--gray-700); align-items: center; }
+.about-coverage li:last-child { border-bottom: none; }
+.about-coverage-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); flex-shrink: 0; }
+.about-contact { background: var(--navy); padding: 1.5rem; margin-top: 2rem; display: flex; align-items: center; justify-content: space-between; }
+.about-contact-text { color: rgba(255,255,255,0.7); font-size: 13px; }
+.about-contact-text strong { color: white; display: block; font-size: 15px; margin-bottom: 4px; }
+.about-contact-link { background: var(--red); color: white; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 9px 20px; text-decoration: none; }
+.about-contact-link:hover { opacity: 0.9; }
+@media (max-width: 600px) {
+  .about-values { grid-template-columns: 1fr; }
+  .about-contact { flex-direction: column; gap: 1rem; align-items: flex-start; }
+  .about-hero { padding: 2rem 1rem; }
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="nav-logo" href="index.html"><img src="images/logo.png" alt="US Figure Skating News" style="height:36px;width:auto;"><div class="nav-logo-text" style="display:none">US Figure Skating News</div></a>
+  <div class="nav-links"><a class="nav-a" href="index.html">Home</a><a class="nav-a" href="roster.html">Roster</a><a class="nav-a" href="#">News</a><a class="nav-a" href="#">Results</a><a class="nav-a active" href="about.html">About</a></div>
+</nav>
+<div class="sport-bar"><span class="sport-bar-label">Figure Skating</span><a class="sport-bar-link" href="roster.html">Roster ›</a></div>
+
+<div class="about-hero">
+  <div class="about-hero-inner">
+    <div class="about-hero-tag">About Us</div>
+    <div class="about-hero-title">US Figure Skating News</div>
+    <div class="about-hero-sub">Your dedicated source for US figure skating athlete profiles, competition coverage, and news — covering the sport at every level.</div>
+  </div>
+</div>
+
+<div class="about-body">
+
+  <div class="about-section">
+    <div class="about-section-title">Who We Are</div>
+    <div class="about-text">US Figure Skating News is a dedicated digital publication covering the athletes, competitions, and stories of US figure skating. We provide in-depth athlete profiles, competition results, season previews, and news coverage across all four Olympic disciplines — ladies singles, men's singles, pairs, and ice dance.</div>
+    <div class="about-text">Our coverage follows US skaters from the junior level through the Olympic stage, with a focus on bringing fans closer to the athletes and the sport they love. Whether you're a longtime figure skating follower or new to the sport, our goal is to be the most complete and accurate resource for US figure skating.</div>
+  </div>
+
+  <div class="about-section">
+    <div class="about-section-title">What We Cover</div>
+    <ul class="about-coverage">
+      <li><div class="about-coverage-dot"></div>Athlete profiles, bios, and career histories for US national team members</li>
+      <li><div class="about-coverage-dot"></div>Competition results and recaps from the ISU Grand Prix Series, Challenger Series, and US Championships</li>
+      <li><div class="about-coverage-dot"></div>Olympic and World Championship coverage</li>
+      <li><div class="about-coverage-dot"></div>Season program information — music, choreographers, and artistic direction</li>
+      <li><div class="about-coverage-dot"></div>ISU personal bests, world standings, and scoring breakdowns</li>
+      <li><div class="about-coverage-dot"></div>Junior skaters and the next generation of US talent</li>
+      <li><div class="about-coverage-dot"></div>Features and long-form stories on the athletes and stories shaping the sport</li>
+    </ul>
+  </div>
+
+  <div class="about-section">
+    <div class="about-section-title">Our Approach</div>
+    <div class="about-values">
+      <div class="about-value">
+        <div class="about-value-title">Accuracy</div>
+        <div class="about-value-text">We verify scores, standings, and biographical information against official ISU and US Figure Skating sources before publishing.</div>
+      </div>
+      <div class="about-value">
+        <div class="about-value-title">Depth</div>
+        <div class="about-value-text">Beyond the headlines — full career results, program details, and the stories behind the performances that define US figure skating.</div>
+      </div>
+      <div class="about-value">
+        <div class="about-value-title">Respect</div>
+        <div class="about-value-text">Athletes first. We cover skaters with the care and context their careers deserve, from their first competition to the Olympic stage.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-section">
+    <div class="about-section-title">The 2025–26 Season</div>
+    <div class="about-text">The 2025–26 season was one of the most remarkable in US figure skating history. At the Olympic Winter Games Milano Cortina 2026, the United States won gold in the figure skating team event for the second consecutive Olympics, with Alysa Liu claiming individual gold in women's singles — the first US women's singles Olympic champion since Sarah Hughes in 2002. Ilia Malinin, the sport's reigning world record holder, and ice dance legends Madison Chock and Evan Bates were central to one of the deepest and most decorated US Olympic teams in decades.</div>
+    <div class="about-text">Our 2025–26 coverage includes full profiles for all 16 members of the US Olympic figure skating team, complete with career histories, ISU personal bests, world standings, season programs, and competition results.</div>
+  </div>
+
+  <div class="about-contact">
+    <div class="about-contact-text">
+      <strong>Get in touch</strong>
+      Questions, corrections, or media inquiries welcome.
+    </div>
+    <a class="about-contact-link" href="mailto:contact@usfigureskatingnews.com">Contact Us</a>
+  </div>
+
+</div>
+</body>
+</html>
