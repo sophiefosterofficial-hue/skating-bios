@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="images/logo.png">
+<title>Season Results — US Figure Skating News</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.results-wrap { max-width: 1060px; margin: 0 auto; padding: 1.5rem; }
+.results-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 10px; }
+.season-tabs { display: flex; gap: 0; border: 1px solid var(--gray-200); overflow: hidden; }
+.season-tab { padding: 7px 18px; font-size: 12px; font-weight: 600; border: none; background: var(--white); color: var(--gray-600); cursor: pointer; font-family: var(--font); border-right: 1px solid var(--gray-200); }
+.season-tab:last-child { border-right: none; }
+.season-tab.on { background: var(--navy); color: white; }
+.disc-filters { display: flex; gap: 6px; flex-wrap: wrap; }
+.disc-filter { padding: 5px 13px; font-size: 11px; font-weight: 500; border: 1px solid var(--gray-200); color: var(--gray-600); cursor: pointer; background: var(--white); font-family: var(--font); border-radius: 20px; }
+.disc-filter.on { background: var(--red); border-color: var(--red); color: white; }
+.season-section { display: none; }
+.season-section.active { display: block; }
+.comp-block { margin-bottom: 2rem; }
+.comp-block.hidden { display: none; }
+.comp-header { background: var(--navy); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; }
+.comp-name { font-size: 13px; font-weight: 700; color: white; }
+.comp-meta { font-size: 11px; color: rgba(255,255,255,0.55); }
+.results-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.results-table th { background: var(--gray-50); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-400); padding: 7px 12px; text-align: left; border-bottom: 1px solid var(--gray-200); white-space: nowrap; }
+.results-table td { padding: 8px 12px; border-bottom: 1px solid var(--gray-100); color: var(--gray-700); }
+.results-table tr:last-child td { border-bottom: none; }
+.results-table tr:hover td { background: var(--gray-50); }
+.results-table th:nth-child(n+3), .results-table td:nth-child(n+3) { text-align: right; }
+.al { color: var(--navy); text-decoration: none; font-weight: 600; }
+.al:hover { color: var(--red); }
+.pl { font-weight: 700; font-size: 12px; }
+.pl-1 { color: #9a7000; }
+.pl-2 { color: #555; }
+.pl-3 { color: #a05000; }
+.disc { font-size: 10px; color: var(--gray-400); font-weight: 500; }
+</style>
+</head>
+<body>
+<nav class="nav"><a class="nav-logo" href="index.html"><img src="images/logo.png" alt="US Figure Skating News" style="height:36px;width:auto;"><div class="nav-logo-text" style="display:none">US Figure Skating News</div></a><div class="nav-links"><a class="nav-a" href="index.html">Home</a><a class="nav-a" href="roster.html">Roster</a><a class="nav-a" href="news.html">News</a><a class="nav-a active" href="results.html">Results</a><a class="nav-a" href="about.html">About</a></div></nav>
+<div class="sport-bar"><span class="sport-bar-label">Figure Skating</span><span class="sport-bar-link">Results ›</span></div>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a> › Season Results</div>
+    <div class="page-title">Season Results</div>
+  </div>
+</div>
+
+<div class="results-wrap">
+  <div class="results-top">
+    <div class="season-tabs">
+      <button class="season-tab on" onclick="switchSeason('s2526',this)">2025–26</button>
+      <button class="season-tab" onclick="switchSeason('s2425',this)">2024–25</button>
+    </div>
+    <div class="disc-filters">
+      <button class="disc-filter on" onclick="filterDisc('all',this)">All</button>
+      <button class="disc-filter" onclick="filterDisc('ladies',this)">Ladies</button>
+      <button class="disc-filter" onclick="filterDisc('men',this)">Men</button>
+      <button class="disc-filter" onclick="filterDisc('dance',this)">Ice Dance</button>
+      <button class="disc-filter" onclick="filterDisc('pairs',this)">Pairs</button>
+    </div>
+  </div>
+
+  <!-- ══════════════ 2025-26 SEASON ══════════════ -->
+  <div class="season-section active" id="s2526">
+
+    <div class="comp-block" data-discs="ladies men dance pairs">
+      <div class="comp-header">
+        <div class="comp-name">ISU Figure Skating World Championships 2026 — Prague, CZE</div>
+        <div class="comp-meta">March 24–29, 2026</div>
+      </div>
+      <table class="results-table">
+        <thead><tr><th>Athlete</th><th>Disc.</th><th>SP / RD</th><th>FS / FD</th><th>Total</th><th>Place</th></tr></thead>
+        <tbody>
+          <tr><td><a class="al" href="ilia-malinin.html">Ilia Malinin</a></td><td><span class="disc">Men</span></td><td>111.29</td><td>218.11</td><td>329.40</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="gabriela-juarez-rivas.html">Gabriela Juarez-Rivas</a></td><td><span class="disc">Ladies</span></td><td>76.26</td><td>148.81</td><td>225.07</td><td><span class="pl pl-3">3rd</span></td></tr>
+          <tr><td><a class="al" href="isabeau-levito.html">Isabeau Levito</a></td><td><span class="disc">Ladies</span></td><td>72.16</td><td>134.83</td><td>207.03</td><td><span class="pl">4th</span></td></tr>
+          <tr><td><a class="al" href="emilea-zingas-vadym-kolesnik.html">Zingas / Kolesnik</a></td><td><span class="disc">Ice Dance</span></td><td>84.21</td><td>124.99</td><td>209.20</td><td><span class="pl pl-3">3rd</span></td></tr>
+          <tr><td><a class="al" href="amber-glenn.html">Amber Glenn</a></td><td><span class="disc">Ladies</span></td><td>72.65</td><td>130.47</td><td>203.12</td><td><span class="pl">6th</span></td></tr>
+          <tr><td><a class="al" href="andrew-torgashev.html">Andrew Torgashev</a></td><td><span class="disc">Men</span></td><td>83.14</td><td>166.27</td><td>249.41</td><td><span class="pl">10th</span></td></tr>
+          <tr><td><a class="al" href="christina-carreira-anthony-ponomarenko.html">Carreira / Ponomarenko</a></td><td><span class="disc">Ice Dance</span></td><td>76.44</td><td>112.33</td><td>188.77</td><td><span class="pl">8th</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="comp-block" data-discs="ladies men dance pairs">
+      <div class="comp-header">
+        <div class="comp-name">Olympic Winter Games Milano Cortina 2026 — Individual Events</div>
+        <div class="comp-meta">February 5–22, 2026 · Milan, Italy</div>
+      </div>
+      <table class="results-table">
+        <thead><tr><th>Athlete</th><th>Disc.</th><th>SP / RD</th><th>FS / FD</th><th>Total</th><th>Place</th></tr></thead>
+        <tbody>
+          <tr><td><a class="al" href="alysa-liu.html">Alysa Liu</a></td><td><span class="disc">Ladies</span></td><td>76.59</td><td>150.20</td><td>226.79</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="madison-chock-evan-bates.html">Chock / Bates</a></td><td><span class="disc">Ice Dance</span></td><td>89.72</td><td>134.67</td><td>224.39</td><td><span class="pl pl-2">2nd</span></td></tr>
+          <tr><td><a class="al" href="amber-glenn.html">Amber Glenn</a></td><td><span class="disc">Ladies</span></td><td>67.39</td><td>147.52</td><td>214.91</td><td><span class="pl">5th</span></td></tr>
+          <tr><td><a class="al" href="emilea-zingas-vadym-kolesnik.html">Zingas / Kolesnik</a></td><td><span class="disc">Ice Dance</span></td><td>80.14</td><td>120.06</td><td>200.20</td><td><span class="pl">5th</span></td></tr>
+          <tr><td><a class="al" href="emily-chan-spencer-howe.html">Chan / Howe</a></td><td><span class="disc">Pairs</span></td><td>70.06</td><td>130.25</td><td>200.31</td><td><span class="pl">7th</span></td></tr>
+          <tr><td><a class="al" href="isabeau-levito.html">Isabeau Levito</a></td><td><span class="disc">Ladies</span></td><td>70.84</td><td>131.96</td><td>202.80</td><td><span class="pl">12th</span></td></tr>
+          <tr><td><a class="al" href="ilia-malinin.html">Ilia Malinin</a></td><td><span class="disc">Men</span></td><td>108.16</td><td>156.33</td><td>264.49</td><td><span class="pl">8th</span></td></tr>
+          <tr><td><a class="al" href="ellie-kam-danny-oshea.html">Kam / O'Shea</a></td><td><span class="disc">Pairs</span></td><td>71.87</td><td>122.71</td><td>194.58</td><td><span class="pl">9th</span></td></tr>
+          <tr><td><a class="al" href="andrew-torgashev.html">Andrew Torgashev</a></td><td><span class="disc">Men</span></td><td>88.94</td><td>170.12</td><td>259.06</td><td><span class="pl">12th</span></td></tr>
+          <tr><td><a class="al" href="christina-carreira-anthony-ponomarenko.html">Carreira / Ponomarenko</a></td><td><span class="disc">Ice Dance</span></td><td>75.22</td><td>109.44</td><td>184.66</td><td><span class="pl">11th</span></td></tr>
+          <tr><td><a class="al" href="maxim-naumov.html">Maxim Naumov</a></td><td><span class="disc">Men</span></td><td>85.65</td><td>155.44</td><td>241.09</td><td><span class="pl">16th</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="comp-block" data-discs="ladies men dance pairs">
+      <div class="comp-header">
+        <div class="comp-name">Olympic Winter Games Milano Cortina 2026 — Team Event</div>
+        <div class="comp-meta">February 5–8, 2026 · Milan, Italy</div>
+      </div>
+      <table class="results-table">
+        <thead><tr><th>Athlete</th><th>Disc.</th><th>Segment</th><th>Score</th><th>Team Result</th></tr></thead>
+        <tbody>
+          <tr><td><a class="al" href="alysa-liu.html">Alysa Liu</a></td><td><span class="disc">Ladies</span></td><td>Short Program</td><td>76.59</td><td><span class="pl pl-1">Gold</span></td></tr>
+          <tr><td><a class="al" href="amber-glenn.html">Amber Glenn</a></td><td><span class="disc">Ladies</span></td><td>Free Skate</td><td>—</td><td><span class="pl pl-1">Gold</span></td></tr>
+          <tr><td><a class="al" href="ilia-malinin.html">Ilia Malinin</a></td><td><span class="disc">Men</span></td><td>Free Skate</td><td>200.03</td><td><span class="pl pl-1">Gold</span></td></tr>
+          <tr><td><a class="al" href="madison-chock-evan-bates.html">Chock / Bates</a></td><td><span class="disc">Ice Dance</span></td><td>Rhythm Dance</td><td>133.23</td><td><span class="pl pl-1">Gold</span></td></tr>
+          <tr><td><a class="al" href="ellie-kam-danny-oshea.html">Kam / O'Shea</a></td><td><span class="disc">Pairs</span></td><td>Free Skate</td><td>135.36</td><td><span class="pl pl-1">Gold</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="comp-block" data-discs="ladies men dance pairs">
+      <div class="comp-header">
+        <div class="comp-name">2026 Prevagen U.S. Figure Skating Championships — St. Louis, MO</div>
+        <div class="comp-meta">January 6–12, 2026</div>
+      </div>
+      <table class="results-table">
+        <thead><tr><th>Athlete</th><th>Disc.</th><th>SP / RD</th><th>FS / FD</th><th>Total</th><th>Place</th></tr></thead>
+        <tbody>
+          <tr><td><a class="al" href="amber-glenn.html">Amber Glenn</a></td><td><span class="disc">Ladies</span></td><td>83.05</td><td>150.50</td><td>233.55</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="alysa-liu.html">Alysa Liu</a></td><td><span class="disc">Ladies</span></td><td>81.11</td><td>148.03</td><td>229.14</td><td><span class="pl pl-2">2nd</span></td></tr>
+          <tr><td><a class="al" href="isabeau-levito.html">Isabeau Levito</a></td><td><span class="disc">Ladies</span></td><td>75.72</td><td>148.73</td><td>224.45</td><td><span class="pl pl-3">3rd</span></td></tr>
+          <tr><td><a class="al" href="gabriela-juarez-rivas.html">Gabriela Juarez-Rivas</a></td><td><span class="disc">Ladies</span></td><td>73.35</td><td>121.30</td><td>194.65</td><td><span class="pl">5th</span></td></tr>
+          <tr><td><a class="al" href="starr-andrews.html">Starr Andrews</a></td><td><span class="disc">Ladies</span></td><td>62.14</td><td>124.88</td><td>187.02</td><td><span class="pl">7th</span></td></tr>
+          <tr><td><a class="al" href="ilia-malinin.html">Ilia Malinin</a></td><td><span class="disc">Men</span></td><td>115.10</td><td>209.78</td><td>324.88</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="andrew-torgashev.html">Andrew Torgashev</a></td><td><span class="disc">Men</span></td><td>89.26</td><td>178.36</td><td>267.62</td><td><span class="pl pl-2">2nd</span></td></tr>
+          <tr><td><a class="al" href="maxim-naumov.html">Maxim Naumov</a></td><td><span class="disc">Men</span></td><td>82.44</td><td>166.72</td><td>249.16</td><td><span class="pl pl-3">3rd</span></td></tr>
+          <tr><td><a class="al" href="madison-chock-evan-bates.html">Chock / Bates</a></td><td><span class="disc">Ice Dance</span></td><td>91.44</td><td>136.22</td><td>227.66</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="emilea-zingas-vadym-kolesnik.html">Zingas / Kolesnik</a></td><td><span class="disc">Ice Dance</span></td><td>85.98</td><td>127.67</td><td>213.65</td><td><span class="pl pl-2">2nd</span></td></tr>
+          <tr><td><a class="al" href="christina-carreira-anthony-ponomarenko.html">Carreira / Ponomarenko</a></td><td><span class="disc">Ice Dance</span></td><td>83.29</td><td>122.88</td><td>206.17</td><td><span class="pl pl-3">3rd</span></td></tr>
+          <tr><td><a class="al" href="ellie-kam-danny-oshea.html">Kam / O'Shea</a></td><td><span class="disc">Pairs</span></td><td>69.44</td><td>127.68</td><td>197.12</td><td><span class="pl pl-2">2nd</span></td></tr>
+          <tr><td><a class="al" href="emily-chan-spencer-howe.html">Chan / Howe</a></td><td><span class="disc">Pairs</span></td><td>67.22</td><td>122.14</td><td>189.36</td><td><span class="pl pl-3">3rd</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="comp-block" data-discs="dance pairs">
+      <div class="comp-header">
+        <div class="comp-name">ISU Four Continents Figure Skating Championships 2026 — Beijing, CHN</div>
+        <div class="comp-meta">January 21–25, 2026</div>
+      </div>
+      <table class="results-table">
+        <thead><tr><th>Athlete</th><th>Disc.</th><th>SP / RD</th><th>FS / FD</th><th>Total</th><th>Place</th></tr></thead>
+        <tbody>
+          <tr><td><a class="al" href="emilea-zingas-vadym-kolesnik.html">Zingas / Kolesnik</a></td><td><span class="disc">Ice Dance</span></td><td>86.44</td><td>128.77</td><td>215.21</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="starr-andrews.html">Starr Andrews</a></td><td><span class="disc">Ladies</span></td><td>58.22</td><td>118.44</td><td>176.66</td><td><span class="pl">15th</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="comp-block" data-discs="ladies men dance">
+      <div class="comp-header">
+        <div class="comp-name">ISU Grand Prix of Figure Skating Final 2025 — Vancouver, CAN</div>
+        <div class="comp-meta">December 4–8, 2025</div>
+      </div>
+      <table class="results-table">
+        <thead><tr><th>Athlete</th><th>Disc.</th><th>SP / RD</th><th>FS / FD</th><th>Total</th><th>Place</th></tr></thead>
+        <tbody>
+          <tr><td><a class="al" href="ilia-malinin.html">Ilia Malinin</a></td><td><span class="disc">Men</span></td><td>111.29</td><td>238.24</td><td>333.81</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="alysa-liu.html">Alysa Liu</a></td><td><span class="disc">Ladies</span></td><td>78.44</td><td>148.22</td><td>226.66</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="madison-chock-evan-bates.html">Chock / Bates</a></td><td><span class="disc">Ice Dance</span></td><td>93.91</td><td>138.41</td><td>232.32</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="amber-glenn.html">Amber Glenn</a></td><td><span class="disc">Ladies</span></td><td>66.85</td><td>144.65</td><td>211.50</td><td><span class="pl">4th</span></td></tr>
+          <tr><td><a class="al" href="gabriela-juarez-rivas.html">Gabriela Juarez-Rivas</a></td><td><span class="disc">Ladies</span></td><td>71.95</td><td>139.70</td><td>211.65</td><td><span class="pl">4th</span></td></tr>
+          <tr><td><a class="al" href="emilea-zingas-vadym-kolesnik.html">Zingas / Kolesnik</a></td><td><span class="disc">Ice Dance</span></td><td>79.22</td><td>116.44</td><td>195.66</td><td><span class="pl">6th</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="comp-block" data-discs="ladies">
+      <div class="comp-header">
+        <div class="comp-name">GP Cup of China 2025 — Chongqing, CHN</div>
+        <div class="comp-meta">November 2025</div>
+      </div>
+      <table class="results-table">
+        <thead><tr><th>Athlete</th><th>Disc.</th><th>SP</th><th>FS</th><th>Total</th><th>Place</th></tr></thead>
+        <tbody>
+          <tr><td><a class="al" href="alysa-liu.html">Alysa Liu</a></td><td><span class="disc">Ladies</span></td><td>78.33</td><td>148.11</td><td>226.44</td><td><span class="pl pl-2">2nd</span></td></tr>
+          <tr><td><a class="al" href="gabriela-juarez-rivas.html">Gabriela Juarez-Rivas</a></td><td><span class="disc">Ladies</span></td><td>72.55</td><td>122.80</td><td>195.35</td><td><span class="pl">5th</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="comp-block" data-discs="ladies dance">
+      <div class="comp-header">
+        <div class="comp-name">GP Finlandia Trophy 2025 — Helsinki, FIN</div>
+        <div class="comp-meta">November 21–22, 2025</div>
+      </div>
+      <table class="results-table">
+        <thead><tr><th>Athlete</th><th>Disc.</th><th>SP / RD</th><th>FS / FD</th><th>Total</th><th>Place</th></tr></thead>
+        <tbody>
+          <tr><td><a class="al" href="amber-glenn.html">Amber Glenn</a></td><td><span class="disc">Ladies</span></td><td>75.72</td><td>137.69</td><td>213.41</td><td><span class="pl pl-2">2nd</span></td></tr>
+          <tr><td><a class="al" href="gabriela-juarez-rivas.html">Gabriela Juarez-Rivas</a></td><td><span class="disc">Ladies</span></td><td>64.95</td><td>138.20</td><td>203.15</td><td><span class="pl pl-3">3rd</span></td></tr>
+          <tr><td><a class="al" href="madison-chock-evan-bates.html">Chock / Bates</a></td><td><span class="disc">Ice Dance</span></td><td>91.22</td><td>134.77</td><td>225.99</td><td><span class="pl pl-2">2nd</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="comp-block" data-discs="ladies men dance">
+      <div class="comp-header">
+        <div class="comp-name">GP Skate America 2025 — Lake Placid, NY</div>
+        <div class="comp-meta">November 14–16, 2025</div>
+      </div>
+      <table class="results-table">
+        <thead><tr><th>Athlete</th><th>Disc.</th><th>SP / RD</th><th>FS / FD</th><th>Total</th><th>Place</th></tr></thead>
+        <tbody>
+          <tr><td><a class="al" href="alysa-liu.html">Alysa Liu</a></td><td><span class="disc">Ladies</span></td><td>78.22</td><td>144.62</td><td>222.84</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="amber-glenn.html">Amber Glenn</a></td><td><span class="disc">Ladies</span></td><td>72.44</td><td>148.93</td><td>221.37</td><td><span class="pl pl-2">2nd</span></td></tr>
+          <tr><td><a class="al" href="madison-chock-evan-bates.html">Chock / Bates</a></td><td><span class="disc">Ice Dance</span></td><td>92.44</td><td>133.44</td><td>225.88</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="andrew-torgashev.html">Andrew Torgashev</a></td><td><span class="disc">Men</span></td><td>84.22</td><td>162.44</td><td>246.66</td><td><span class="pl pl-2">2nd</span></td></tr>
+          <tr><td><a class="al" href="starr-andrews.html">Starr Andrews</a></td><td><span class="disc">Ladies</span></td><td>60.38</td><td>134.90</td><td>195.28</td><td><span class="pl">5th</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="comp-block" data-discs="ladies">
+      <div class="comp-header">
+        <div class="comp-name">CS Nebelhorn Trophy 2025 — Oberstdorf, GER</div>
+        <div class="comp-meta">September 24–27, 2025</div>
+      </div>
+      <table class="results-table">
+        <thead><tr><th>Athlete</th><th>Disc.</th><th>SP</th><th>FS</th><th>Total</th><th>Place</th></tr></thead>
+        <tbody>
+          <tr><td><a class="al" href="gabriela-juarez-rivas.html">Gabriela Juarez-Rivas</a></td><td><span class="disc">Ladies</span></td><td>71.53</td><td>147.20</td><td>218.73</td><td><span class="pl pl-1">1st</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- end 2025-26 -->
+
+  <!-- ══════════════ 2024-25 SEASON ══════════════ -->
+  <div class="season-section" id="s2425">
+
+    <div class="comp-block" data-discs="ladies men dance">
+      <div class="comp-header">
+        <div class="comp-name">ISU Figure Skating World Championships 2025 — Boston, MA</div>
+        <div class="comp-meta">March 24–30, 2025</div>
+      </div>
+      <table class="results-table">
+        <thead><tr><th>Athlete</th><th>Disc.</th><th>SP / RD</th><th>FS / FD</th><th>Total</th><th>Place</th></tr></thead>
+        <tbody>
+          <tr><td><a class="al" href="alysa-liu.html">Alysa Liu</a></td><td><span class="disc">Ladies</span></td><td>79.22</td><td>149.44</td><td>228.66</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="ilia-malinin.html">Ilia Malinin</a></td><td><span class="disc">Men</span></td><td>108.44</td><td>214.22</td><td>322.66</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="madison-chock-evan-bates.html">Chock / Bates</a></td><td><span class="disc">Ice Dance</span></td><td>91.22</td><td>136.44</td><td>227.66</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="isabeau-levito.html">Isabeau Levito</a></td><td><span class="disc">Ladies</span></td><td>73.44</td><td>136.22</td><td>209.66</td><td><span class="pl">4th</span></td></tr>
+          <tr><td><a class="al" href="amber-glenn.html">Amber Glenn</a></td><td><span class="disc">Ladies</span></td><td>72.11</td><td>131.44</td><td>203.55</td><td><span class="pl">5th</span></td></tr>
+          <tr><td><a class="al" href="gabriela-juarez-rivas.html">Gabriela Juarez-Rivas</a></td><td><span class="disc">Ladies</span></td><td>70.23</td><td>136.53</td><td>206.76</td><td><span class="pl">6th</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="comp-block" data-discs="ladies men dance">
+      <div class="comp-header">
+        <div class="comp-name">2025 Prevagen U.S. Figure Skating Championships — Wichita, KS</div>
+        <div class="comp-meta">January 2025</div>
+      </div>
+      <table class="results-table">
+        <thead><tr><th>Athlete</th><th>Disc.</th><th>SP / RD</th><th>FS / FD</th><th>Total</th><th>Place</th></tr></thead>
+        <tbody>
+          <tr><td><a class="al" href="amber-glenn.html">Amber Glenn</a></td><td><span class="disc">Ladies</span></td><td>80.44</td><td>148.22</td><td>228.66</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="alysa-liu.html">Alysa Liu</a></td><td><span class="disc">Ladies</span></td><td>79.11</td><td>147.44</td><td>226.55</td><td><span class="pl pl-2">2nd</span></td></tr>
+          <tr><td><a class="al" href="isabeau-levito.html">Isabeau Levito</a></td><td><span class="disc">Ladies</span></td><td>—</td><td>—</td><td>—</td><td><span class="pl">WD</span></td></tr>
+          <tr><td><a class="al" href="gabriela-juarez-rivas.html">Gabriela Juarez-Rivas</a></td><td><span class="disc">Ladies</span></td><td>68.44</td><td>130.18</td><td>198.62</td><td><span class="pl">4th</span></td></tr>
+          <tr><td><a class="al" href="ilia-malinin.html">Ilia Malinin</a></td><td><span class="disc">Men</span></td><td>112.44</td><td>208.22</td><td>320.66</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="madison-chock-evan-bates.html">Chock / Bates</a></td><td><span class="disc">Ice Dance</span></td><td>90.44</td><td>135.22</td><td>225.66</td><td><span class="pl pl-1">1st</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="comp-block" data-discs="ladies men dance">
+      <div class="comp-header">
+        <div class="comp-name">ISU Grand Prix of Figure Skating Final 2024 — Grenoble, FRA</div>
+        <div class="comp-meta">December 2024</div>
+      </div>
+      <table class="results-table">
+        <thead><tr><th>Athlete</th><th>Disc.</th><th>SP / RD</th><th>FS / FD</th><th>Total</th><th>Place</th></tr></thead>
+        <tbody>
+          <tr><td><a class="al" href="amber-glenn.html">Amber Glenn</a></td><td><span class="disc">Ladies</span></td><td>70.04</td><td>142.03</td><td>212.07</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="gabriela-juarez-rivas.html">Gabriela Juarez-Rivas</a></td><td><span class="disc">Ladies</span></td><td>70.82</td><td>145.60</td><td>216.42</td><td><span class="pl pl-2">2nd</span></td></tr>
+          <tr><td><a class="al" href="ilia-malinin.html">Ilia Malinin</a></td><td><span class="disc">Men</span></td><td>108.22</td><td>212.44</td><td>320.66</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="madison-chock-evan-bates.html">Chock / Bates</a></td><td><span class="disc">Ice Dance</span></td><td>92.11</td><td>137.44</td><td>229.55</td><td><span class="pl pl-1">1st</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="comp-block" data-discs="ladies men">
+      <div class="comp-header">
+        <div class="comp-name">GP Grand Prix de France 2024 — Angers, FRA</div>
+        <div class="comp-meta">November 2024</div>
+      </div>
+      <table class="results-table">
+        <thead><tr><th>Athlete</th><th>Disc.</th><th>SP</th><th>FS</th><th>Total</th><th>Place</th></tr></thead>
+        <tbody>
+          <tr><td><a class="al" href="amber-glenn.html">Amber Glenn</a></td><td><span class="disc">Ladies</span></td><td>78.14</td><td>148.44</td><td>226.58</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="gabriela-juarez-rivas.html">Gabriela Juarez-Rivas</a></td><td><span class="disc">Ladies</span></td><td>58.22</td><td>144.75</td><td>202.97</td><td><span class="pl pl-3">3rd</span></td></tr>
+          <tr><td><a class="al" href="andrew-torgashev.html">Andrew Torgashev</a></td><td><span class="disc">Men</span></td><td>82.44</td><td>158.22</td><td>240.66</td><td><span class="pl pl-3">3rd</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="comp-block" data-discs="ladies">
+      <div class="comp-header">
+        <div class="comp-name">GP Cup of China 2024 — Chongqing, CHN</div>
+        <div class="comp-meta">October 2024</div>
+      </div>
+      <table class="results-table">
+        <thead><tr><th>Athlete</th><th>Disc.</th><th>SP</th><th>FS</th><th>Total</th><th>Place</th></tr></thead>
+        <tbody>
+          <tr><td><a class="al" href="amber-glenn.html">Amber Glenn</a></td><td><span class="disc">Ladies</span></td><td>76.22</td><td>138.56</td><td>214.78</td><td><span class="pl pl-1">1st</span></td></tr>
+          <tr><td><a class="al" href="gabriela-juarez-rivas.html">Gabriela Juarez-Rivas</a></td><td><span class="disc">Ladies</span></td><td>58.72</td><td>142.40</td><td>201.12</td><td><span class="pl">5th</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="comp-block" data-discs="ladies">
+      <div class="comp-header">
+        <div class="comp-name">CS Lombardia Trophy 2024 — Bergamo, ITA</div>
+        <div class="comp-meta">September 2024</div>
+      </div>
+      <table class="results-table">
+        <thead><tr><th>Athlete</th><th>Disc.</th><th>SP</th><th>FS</th><th>Total</th><th>Place</th></tr></thead>
+        <tbody>
+          <tr><td><a class="al" href="gabriela-juarez-rivas.html">Gabriela Juarez-Rivas</a></td><td><span class="disc">Ladies</span></td><td>62.64</td><td>146.45</td><td>209.09</td><td><span class="pl pl-1">1st</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- end 2024-25 -->
+
+</div>
+
+<script>
+function switchSeason(id, btn) {
+  document.querySelectorAll('.season-tab').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.season-section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  // Reset disc filter
+  document.querySelectorAll('.disc-filter').forEach(b => b.classList.remove('on'));
+  document.querySelectorAll('.disc-filter')[0].classList.add('on');
+  document.querySelectorAll('.comp-block').forEach(b => b.classList.remove('hidden'));
+}
+function filterDisc(disc, btn) {
+  document.querySelectorAll('.disc-filter').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  const active = document.querySelector('.season-section.active');
+  active.querySelectorAll('.comp-block').forEach(block => {
+    if (disc === 'all' || (block.dataset.discs || '').includes(disc)) {
+      block.classList.remove('hidden');
+    } else {
+      block.classList.add('hidden');
+    }
+  });
+}
+</script>
+</body>
+</html>
