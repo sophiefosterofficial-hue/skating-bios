@@ -23,8 +23,10 @@
     <span>Tour</span>
   </div>
 
-  <div class="article-hero-placeholder"><span>Add Stars on Ice photo</span></div>
-  <img class="article-hero-img" src="images/article-stars-on-ice.jpg" alt="2026 Stars on Ice" style="display:none" onerror="this.style.display='none'">
+  <div style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#0B2265;">
+    <img src="images/article-stars-on-ice.jpg" alt="2026 Stars on Ice" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="article-hero-placeholder" style="display:none;position:absolute;inset:0;"><span>Add photo</span></div>
+  </div>
   <div class="article-caption">The 2026 Stifel Stars on Ice tour kicks off April 16 at Hertz Arena in Fort Myers, Florida, and concludes May 31 in Southaven, Mississippi.</div>
 
   <div class="article-body">

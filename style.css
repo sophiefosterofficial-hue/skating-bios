@@ -323,3 +323,11 @@ table.rtable { width: 100%; border-collapse: collapse; font-size: 12px; margin-t
   .article-page-wrap { padding: 1rem; }
   .article-title { font-size: 22px; }
 }
+
+/* Mobile nav logo fix */
+@media (max-width: 500px) {
+  .nav-logo-text { display: none !important; }
+  .nav { padding: 0 1rem; }
+  .nav-links { gap: 1rem; }
+  .nav-a { font-size: 12px; }
+}
