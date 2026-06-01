@@ -8,33 +8,43 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav class="nav"><a class="nav-logo" href="index.html"><img src="images/logo.png" alt="US Figure Skating News" style="height:36px;width:auto;"></a><div class="nav-links"><a class="nav-a" href="index.html">Home</a><a class="nav-a" href="roster.html">Roster</a><a class="nav-a" href="news.html">News</a><a class="nav-a" href="results.html">Results</a><a class="nav-a" href="about.html">About</a></div></nav>
+<nav class="nav"><a class="nav-logo" href="index.html"><img src="images/logo.png" alt="US Figure Skating News" style="height:36px;width:auto;"><div class="nav-logo-text" style="display:none">US Figure Skating News</div></a><div class="nav-links"><a class="nav-a" href="index.html">Home</a><a class="nav-a" href="roster.html">Roster</a><a class="nav-a" href="news.html">News</a><a class="nav-a" href="results.html">Results</a><a class="nav-a" href="about.html">About</a></div></nav>
 <div class="sport-bar"><span class="sport-bar-label">Figure Skating</span><a class="sport-bar-link" href="roster.html">Roster ›</a></div>
 
-<div class="profile-banner">
-  <img src="images/jimmy-ma-banner.jpg" alt="Jimmy Ma" onerror="this.style.display='none'">
+<!-- BANNER -->
+<div class="profile-banner-wrap">
+  <img class="profile-banner-img" src="images/jimmy-ma-banner.jpg" alt="Jimmy Ma" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+  <div class="profile-banner-placeholder" style="display:none"><span class="profile-banner-placeholder-text">Jimmy Ma</span></div>
+  <div class="profile-banner-overlay"></div>
 </div>
+
+<!-- ROUND HEADSHOT + NAME -->
 <div class="profile-headshot-wrap">
-  <div class="profile-headshot"><img src="images/jimmy-ma.jpg" alt="Jimmy Ma" onerror="this.parentElement.style.background='#0B2265'"></div>
+  <div class="profile-headshot-circle">
+    <img src="images/jimmy-ma.jpg" alt="Jimmy Ma" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <div class="profile-headshot-init" style="display:none">JM</div>
+  </div>
 </div>
-<div class="profile-name-wrap">
-  <h1 class="profile-name">Jimmy Ma</h1>
+<div class="profile-identity">
+  <div class="profile-name">Jimmy Ma</div>
   <div class="profile-disc-tag">MEN'S SINGLES</div>
+</div>
+<div class="profile-sport-bar"><span class="profile-sport-bar-label">Figure Skating</span><a class="profile-sport-bar-link" href="roster.html">Roster ›</a></div>
 </div>
 
 <div class="profile-body">
   <div class="profile-main">
     <div class="info-section">
-      <table class="info-table"><tr><td class="info-label">Team</td><td class="info-value" style="color:#DA291C;font-weight:700;">2025–26 Team USA</td></tr>
-        <tr><td class="info-label">Level/Discipline</td><td class="info-value">Senior/Men's Singles</td></tr>
-<tr><td class="info-label">Pronouns</td><td class="info-value">He/Him</td></tr>
-<tr><td class="info-label">Birth Date</td><td class="info-value">Oct. 17, 1997</td></tr>
-<tr><td class="info-label">Birthplace</td><td class="info-value">New York, NY</td></tr>
-<tr><td class="info-label">Hometown</td><td class="info-value">Queens, NY</td></tr>
-<tr><td class="info-label">Training Town</td><td class="info-value">Hackensack, New Jersey</td></tr>
-<tr><td class="info-label">Coach(es)</td><td class="info-value">Tammy Gambill</td></tr>
-<tr><td class="info-label">Club</td><td class="info-value">SC of New York</td></tr>
-<tr><td class="info-label">World Standing</td><td class="info-value">—</td></tr></table>
+      <table class="info-table"><div class="info-row"><span class="info-row-label">Team</span><span class="info-row-value" style="color:#DA291C;font-weight:700;">2025–26 Team USA</span></div>
+        <div class="info-row"><span class="info-row-label">Level/Discipline</span><span class="info-row-value">Senior/Men's Singles</span></div>
+<div class="info-row"><span class="info-row-label">Pronouns</span><span class="info-row-value">He/Him</span></div>
+<div class="info-row"><span class="info-row-label">Birth Date</span><span class="info-row-value">Oct. 17, 1997</span></div>
+<div class="info-row"><span class="info-row-label">Birthplace</span><span class="info-row-value">New York, NY</span></div>
+<div class="info-row"><span class="info-row-label">Hometown</span><span class="info-row-value">Queens, NY</span></div>
+<div class="info-row"><span class="info-row-label">Training Town</span><span class="info-row-value">Hackensack, New Jersey</span></div>
+<div class="info-row"><span class="info-row-label">Coach(es)</span><span class="info-row-value">Tammy Gambill</span></div>
+<div class="info-row"><span class="info-row-label">Club</span><span class="info-row-value">SC of New York</span></div>
+<div class="info-row"><span class="info-row-label">World Standing</span><span class="info-row-value">—</span></div></table>
     </div>
 
     <div class="prog-section">
