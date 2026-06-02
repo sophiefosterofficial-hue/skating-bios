@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="images/logo.png">
+<title>Athlete Profiles — US Figure Skating News</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.disc-section { display: none; }
+.disc-section.active { display: block; }
+.page-sub-a { cursor: pointer; }
+.tier-header { margin: 1.5rem 0 0.6rem; padding: 6px 12px; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border-left: 3px solid; }
+.tier-header:first-child { margin-top: 0.25rem; }
+.tier-header.a { border-color: #DA291C; color: #DA291C; background: #fff8f8; }
+.tier-header.b { border-color: #0B2265; color: #0B2265; background: #f8f8ff; }
+.tier-header.c { border-color: #555; color: #555; background: #f8f8f8; }
+.tier-header.nat { border-color: #999; color: #888; background: #f5f5f5; }
+.roster-card-tier { position: absolute; bottom: 0; left: 0; right: 0; font-size: 8px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; text-align: center; }
+.tier-a { background: #DA291C; color: white; }
+.tier-b { background: #0B2265; color: white; }
+.tier-c { background: #555; color: white; }
+.tier-nat { background: #888; color: white; }
+</style>
+</head>
+<body>
+<nav class="nav"><a class="nav-logo" href="index.html"><img src="images/logo.png" alt="US Figure Skating News" style="height:36px;width:auto;"><div class="nav-logo-text" style="display:none">US Figure Skating News</div></a><div class="nav-links"><a class="nav-a" href="index.html">Home</a><a class="nav-a active" href="roster.html">Roster</a><a class="nav-a" href="news.html">News</a><a class="nav-a" href="results.html">Results</a><a class="nav-a" href="about.html">About</a></div></nav>
+<div class="sport-bar"><span class="sport-bar-label">Figure Skating</span><span class="sport-bar-link">Roster ›</span></div>
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a> › Roster</div>
+    <div class="page-title">Athlete Profiles</div>
+    <nav class="page-sub-nav">
+      <span class="page-sub-a active" onclick="showDisc('ladies')">Ladies Singles</span>
+      <span class="page-sub-a" onclick="showDisc('men')">Men's Singles</span>
+      <span class="page-sub-a" onclick="showDisc('dance')">Ice Dance</span>
+      <span class="page-sub-a" onclick="showDisc('pairs')">Pairs</span>
+    </nav>
+  </div>
+</div>
+<div class="wrap">
+  <div class="disc-section active" id="disc-ladies">
+    <div class="tier-header a">Senior A Team</div>
+    <div class="roster-grid">
+      <a class="roster-card" href="amber-glenn.html"><div class="roster-card-photo"><img src="images/amber-glenn.jpg" alt="Amber Glenn" onerror="this.style.display='none'"><div class="roster-card-init">AG</div><div class="roster-card-tier tier-a">Senior A Team</div></div><div class="roster-card-body"><div class="roster-card-name">Amber Glenn</div><div class="roster-card-disc">Senior · Ladies Singles</div></div></a>
+      <a class="roster-card" href="alysa-liu.html"><div class="roster-card-photo"><img src="images/alysa-liu.jpg" alt="Alysa Liu" onerror="this.style.display='none'"><div class="roster-card-init">AL</div><div class="roster-card-tier tier-a">Senior A Team</div></div><div class="roster-card-body"><div class="roster-card-name">Alysa Liu</div><div class="roster-card-disc">Senior · Ladies Singles</div></div></a>
+      <a class="roster-card" href="isabeau-levito.html"><div class="roster-card-photo"><img src="images/isabeau-levito.jpg" alt="Isabeau Levito" onerror="this.style.display='none'"><div class="roster-card-init">IL</div><div class="roster-card-tier tier-a">Senior A Team</div></div><div class="roster-card-body"><div class="roster-card-name">Isabeau Levito</div><div class="roster-card-disc">Senior · Ladies Singles</div></div></a>
+      <a class="roster-card" href="gabriela-juarez-rivas.html"><div class="roster-card-photo"><img src="images/gabriela-juarez-rivas.jpg" alt="Gabriela Juarez-Rivas" onerror="this.style.display='none'"><div class="roster-card-init">GJ</div><div class="roster-card-tier tier-a">Senior A Team</div></div><div class="roster-card-body"><div class="roster-card-name">Gabriela Juarez-Rivas</div><div class="roster-card-disc">Senior · Ladies Singles</div></div></a>
+    </div>
+    <div class="tier-header b">Senior B Team</div>
+    <div class="roster-grid">
+      <a class="roster-card" href="bradie-tennell.html"><div class="roster-card-photo"><img src="images/bradie-tennell.jpg" alt="Bradie Tennell" onerror="this.style.display='none'"><div class="roster-card-init">BT</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Bradie Tennell</div><div class="roster-card-disc">Senior · Ladies Singles</div></div></a>
+      <a class="roster-card" href="sarah-everhardt.html"><div class="roster-card-photo"><img src="images/sarah-everhardt.jpg" alt="Sarah Everhardt" onerror="this.style.display='none'"><div class="roster-card-init">SE</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Sarah Everhardt</div><div class="roster-card-disc">Senior · Ladies Singles</div></div></a>
+      <a class="roster-card" href="starr-andrews.html"><div class="roster-card-photo"><img src="images/starr-andrews.jpg" alt="Starr Andrews" onerror="this.style.display='none'"><div class="roster-card-init">SA</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Starr Andrews</div><div class="roster-card-disc">Senior · Ladies Singles</div></div></a>
+      <a class="roster-card" href="elyce-lin-gracey.html"><div class="roster-card-photo"><img src="images/elyce-lin-gracey.jpg" alt="Elyce Lin-Gracey" onerror="this.style.display='none'"><div class="roster-card-init">EL</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Elyce Lin-Gracey</div><div class="roster-card-disc">Senior · Ladies Singles</div></div></a>
+    </div>
+    <div class="tier-header c">Senior C Team</div>
+    <div class="roster-grid">
+      <a class="roster-card" href="logan-higase-chen.html"><div class="roster-card-photo"><img src="images/logan-higase-chen.jpg" alt="Logan Higase-Chen" onerror="this.style.display='none'"><div class="roster-card-init">LH</div><div class="roster-card-tier tier-c">Senior C Team</div></div><div class="roster-card-body"><div class="roster-card-name">Logan Higase-Chen</div><div class="roster-card-disc">Senior · Ladies Singles</div></div></a>
+      <a class="roster-card" href="josephine-lee.html"><div class="roster-card-photo"><img src="images/josephine-lee.jpg" alt="Josephine Lee" onerror="this.style.display='none'"><div class="roster-card-init">JL</div><div class="roster-card-tier tier-c">Senior C Team</div></div><div class="roster-card-body"><div class="roster-card-name">Josephine Lee</div><div class="roster-card-disc">Senior · Ladies Singles</div></div></a>
+    </div>
+    <div class="tier-header nat">Senior National Team</div>
+    <div class="roster-grid">
+      <a class="roster-card" href="ting-cui.html"><div class="roster-card-photo"><img src="images/ting-cui.jpg" alt="Ting Cui" onerror="this.style.display='none'"><div class="roster-card-init">TC</div><div class="roster-card-tier tier-nat">Senior National Team</div></div><div class="roster-card-body"><div class="roster-card-name">Ting Cui</div><div class="roster-card-disc">Senior · Ladies Singles</div></div></a>
+      <a class="roster-card" href="sherry-zhang.html"><div class="roster-card-photo"><img src="images/sherry-zhang.jpg" alt="Sherry Zhang" onerror="this.style.display='none'"><div class="roster-card-init">SZ</div><div class="roster-card-tier tier-nat">Senior National Team</div></div><div class="roster-card-body"><div class="roster-card-name">Sherry Zhang</div><div class="roster-card-disc">Senior · Ladies Singles</div></div></a>
+      <a class="roster-card" href="alina-bonillo.html"><div class="roster-card-photo"><img src="images/alina-bonillo.jpg" alt="Alina Bonillo" onerror="this.style.display='none'"><div class="roster-card-init">AB</div><div class="roster-card-tier tier-nat">Senior National Team</div></div><div class="roster-card-body"><div class="roster-card-name">Alina Bonillo</div><div class="roster-card-disc">Senior · Ladies Singles</div></div></a>
+      <a class="roster-card" href="sonja-hilmer.html"><div class="roster-card-photo"><img src="images/sonja-hilmer.jpg" alt="Sonja Hilmer" onerror="this.style.display='none'"><div class="roster-card-init">SH</div><div class="roster-card-tier tier-nat">Senior National Team</div></div><div class="roster-card-body"><div class="roster-card-name">Sonja Hilmer</div><div class="roster-card-disc">Senior · Ladies Singles</div></div></a>
+    </div>
+  </div>
+
+  <div class="disc-section" id="disc-men">
+    <div class="tier-header a">Senior A Team</div>
+    <div class="roster-grid">
+      <a class="roster-card" href="ilia-malinin.html"><div class="roster-card-photo"><img src="images/ilia-malinin.jpg" alt="Ilia Malinin" onerror="this.style.display='none'"><div class="roster-card-init">IM</div><div class="roster-card-tier tier-a">Senior A Team</div></div><div class="roster-card-body"><div class="roster-card-name">Ilia Malinin</div><div class="roster-card-disc">Senior · Men's Singles</div></div></a>
+      <a class="roster-card" href="andrew-torgashev.html"><div class="roster-card-photo"><img src="images/andrew-torgashev.jpg" alt="Andrew Torgashev" onerror="this.style.display='none'"><div class="roster-card-init">AT</div><div class="roster-card-tier tier-a">Senior A Team</div></div><div class="roster-card-body"><div class="roster-card-name">Andrew Torgashev</div><div class="roster-card-disc">Senior · Men's Singles</div></div></a>
+      <a class="roster-card" href="maxim-naumov.html"><div class="roster-card-photo"><img src="images/maxim-naumov.jpg" alt="Maxim Naumov" onerror="this.style.display='none'"><div class="roster-card-init">MN</div><div class="roster-card-tier tier-a">Senior A Team</div></div><div class="roster-card-body"><div class="roster-card-name">Maxim Naumov</div><div class="roster-card-disc">Senior · Men's Singles</div></div></a>
+    </div>
+    <div class="tier-header b">Senior B Team</div>
+    <div class="roster-grid">
+      <a class="roster-card" href="jason-brown.html"><div class="roster-card-photo"><img src="images/jason-brown.jpg" alt="Jason Brown" onerror="this.style.display='none'"><div class="roster-card-init">JB</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Jason Brown</div><div class="roster-card-disc">Senior · Men's Singles</div></div></a>
+      <a class="roster-card" href="tomoki-hiwatashi.html"><div class="roster-card-photo"><img src="images/tomoki-hiwatashi.jpg" alt="Tomoki Hiwatashi" onerror="this.style.display='none'"><div class="roster-card-init">TH</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Tomoki Hiwatashi</div><div class="roster-card-disc">Senior · Men's Singles</div></div></a>
+      <a class="roster-card" href="jacob-sanchez.html"><div class="roster-card-photo"><img src="images/jacob-sanchez.jpg" alt="Jacob Sanchez" onerror="this.style.display='none'"><div class="roster-card-init">JS</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Jacob Sanchez</div><div class="roster-card-disc">Senior · Men's Singles</div></div></a>
+      <a class="roster-card" href="lucas-broussard.html"><div class="roster-card-photo"><img src="images/lucas-broussard.jpg" alt="Lucas Broussard" onerror="this.style.display='none'"><div class="roster-card-init">LB</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Lucas Broussard</div><div class="roster-card-disc">Senior · Men's Singles</div></div></a>
+      <a class="roster-card" href="jimmy-ma.html"><div class="roster-card-photo"><img src="images/jimmy-ma.jpg" alt="Jimmy Ma" onerror="this.style.display='none'"><div class="roster-card-init">JM</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Jimmy Ma</div><div class="roster-card-disc">Senior · Men's Singles</div></div></a>
+    </div>
+    <div class="tier-header c">Senior C Team</div>
+    <div class="roster-grid">
+      <a class="roster-card" href="liam-kapeikis.html"><div class="roster-card-photo"><img src="images/liam-kapeikis.jpg" alt="Liam Kapeikis" onerror="this.style.display='none'"><div class="roster-card-init">LK</div><div class="roster-card-tier tier-c">Senior C Team</div></div><div class="roster-card-body"><div class="roster-card-name">Liam Kapeikis</div><div class="roster-card-disc">Senior · Men's Singles</div></div></a>
+      <a class="roster-card" href="daniel-martynov.html"><div class="roster-card-photo"><img src="images/daniel-martynov.jpg" alt="Daniel Martynov" onerror="this.style.display='none'"><div class="roster-card-init">DM</div><div class="roster-card-tier tier-c">Senior C Team</div></div><div class="roster-card-body"><div class="roster-card-name">Daniel Martynov</div><div class="roster-card-disc">Senior · Men's Singles</div></div></a>
+      <a class="roster-card" href="lucius-kazanecki.html"><div class="roster-card-photo"><img src="images/lucius-kazanecki.jpg" alt="Lucius Kazanecki" onerror="this.style.display='none'"><div class="roster-card-init">LK</div><div class="roster-card-tier tier-c">Senior C Team</div></div><div class="roster-card-body"><div class="roster-card-name">Lucius Kazanecki</div><div class="roster-card-disc">Senior · Men's Singles</div></div></a>
+    </div>
+    <div class="tier-header nat">Senior National Team</div>
+    <div class="roster-grid">
+      <a class="roster-card" href="michael-xie.html"><div class="roster-card-photo"><img src="images/michael-xie.jpg" alt="Michael Xie" onerror="this.style.display='none'"><div class="roster-card-init">MX</div><div class="roster-card-tier tier-nat">Senior National Team</div></div><div class="roster-card-body"><div class="roster-card-name">Michael Xie</div><div class="roster-card-disc">Senior · Men's Singles</div></div></a>
+      <a class="roster-card" href="goku-endo.html"><div class="roster-card-photo"><img src="images/goku-endo.jpg" alt="Goku Endo" onerror="this.style.display='none'"><div class="roster-card-init">GE</div><div class="roster-card-tier tier-nat">Senior National Team</div></div><div class="roster-card-body"><div class="roster-card-name">Goku Endo</div><div class="roster-card-disc">Senior · Men's Singles</div></div></a>
+      <a class="roster-card" href="camden-pulkinen.html"><div class="roster-card-photo"><img src="images/camden-pulkinen.jpg" alt="Camden Pulkinen" onerror="this.style.display='none'"><div class="roster-card-init">CP</div><div class="roster-card-tier tier-nat">Senior National Team</div></div><div class="roster-card-body"><div class="roster-card-name">Camden Pulkinen</div><div class="roster-card-disc">Senior · Men's Singles</div></div></a>
+    </div>
+  </div>
+
+  <div class="disc-section" id="disc-pairs">
+    <div class="tier-header a">Senior A Team</div>
+    <div class="roster-grid">
+      <a class="roster-card" href="ellie-kam-danny-oshea.html"><div class="roster-card-photo"><img src="images/ellie-kam-danny-oshea.jpg" alt="Ellie Kam & Danny O'Shea" onerror="this.style.display='none'"><div class="roster-card-init">KO</div><div class="roster-card-tier tier-a">Senior A Team</div></div><div class="roster-card-body"><div class="roster-card-name">Ellie Kam & Danny O'Shea</div><div class="roster-card-disc">Senior · Pairs</div></div></a>
+      <a class="roster-card" href="emily-chan-spencer-howe.html"><div class="roster-card-photo"><img src="images/emily-chan-spencer-howe.jpg" alt="Emily Chan & Spencer Howe" onerror="this.style.display='none'"><div class="roster-card-init">CH</div><div class="roster-card-tier tier-a">Senior A Team</div></div><div class="roster-card-body"><div class="roster-card-name">Emily Chan & Spencer Howe</div><div class="roster-card-disc">Senior · Pairs</div></div></a>
+      <a class="roster-card" href="alisa-efimova-misha-mitrofanov.html"><div class="roster-card-photo"><img src="images/alisa-efimova-misha-mitrofanov.jpg" alt="Alisa Efimova & Misha Mitrofanov" onerror="this.style.display='none'"><div class="roster-card-init">EM</div><div class="roster-card-tier tier-a">Senior A Team</div></div><div class="roster-card-body"><div class="roster-card-name">Alisa Efimova & Misha Mitrofanov</div><div class="roster-card-disc">Senior · Pairs</div></div></a>
+    </div>
+    <div class="tier-header b">Senior B Team</div>
+    <div class="roster-grid">
+      <a class="roster-card" href="audrey-shin-balazs-nagy.html"><div class="roster-card-photo"><img src="images/audrey-shin-balazs-nagy.jpg" alt="Audrey Shin & Balázs Nagy" onerror="this.style.display='none'"><div class="roster-card-init">SN</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Audrey Shin & Balázs Nagy</div><div class="roster-card-disc">Senior · Pairs</div></div></a>
+      <a class="roster-card" href="katie-mcbeath-daniil-parkman.html"><div class="roster-card-photo"><img src="images/katie-mcbeath-daniil-parkman.jpg" alt="Katie McBeath & Daniil Parkman" onerror="this.style.display='none'"><div class="roster-card-init">MP</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Katie McBeath & Daniil Parkman</div><div class="roster-card-disc">Senior · Pairs</div></div></a>
+      <a class="roster-card" href="valentina-plazas-maximiliano-fernandez.html"><div class="roster-card-photo"><img src="images/valentina-plazas-maximiliano-fernandez.jpg" alt="Valentina Plazas & Maximiliano Fernandez" onerror="this.style.display='none'"><div class="roster-card-init">PF</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Valentina Plazas & Maximiliano Fernandez</div><div class="roster-card-disc">Senior · Pairs</div></div></a>
+    </div>
+    <div class="tier-header c">Senior C Team</div>
+    <div class="roster-grid">
+      <a class="roster-card" href="olivia-flores-luke-wang.html"><div class="roster-card-photo"><img src="images/olivia-flores-luke-wang.jpg" alt="Olivia Flores & Luke Wang" onerror="this.style.display='none'"><div class="roster-card-init">FW</div><div class="roster-card-tier tier-c">Senior C Team</div></div><div class="roster-card-body"><div class="roster-card-name">Olivia Flores & Luke Wang</div><div class="roster-card-disc">Senior · Pairs</div></div></a>
+      <a class="roster-card" href="ellie-ferris-timothy-leduc.html"><div class="roster-card-photo"><img src="images/ellie-ferris-timothy-leduc.jpg" alt="Ellie Ferris & Timothy LeDuc" onerror="this.style.display='none'"><div class="roster-card-init">FL</div><div class="roster-card-tier tier-c">Senior C Team</div></div><div class="roster-card-body"><div class="roster-card-name">Ellie Ferris & Timothy LeDuc</div><div class="roster-card-disc">Senior · Pairs</div></div></a>
+    </div>
+  </div>
+
+  <div class="disc-section" id="disc-dance">
+    <div class="tier-header a">Senior A Team</div>
+    <div class="roster-grid">
+      <a class="roster-card" href="madison-chock-evan-bates.html"><div class="roster-card-photo"><img src="images/madison-chock-evan-bates.jpg" alt="Madison Chock & Evan Bates" onerror="this.style.display='none'"><div class="roster-card-init">CB</div><div class="roster-card-tier tier-a">Senior A Team</div></div><div class="roster-card-body"><div class="roster-card-name">Madison Chock & Evan Bates</div><div class="roster-card-disc">Senior · Ice Dance</div></div></a>
+      <a class="roster-card" href="emilea-zingas-vadym-kolesnik.html"><div class="roster-card-photo"><img src="images/emilea-zingas-vadym-kolesnik.jpg" alt="Emilea Zingas & Vadym Kolesnik" onerror="this.style.display='none'"><div class="roster-card-init">ZK</div><div class="roster-card-tier tier-a">Senior A Team</div></div><div class="roster-card-body"><div class="roster-card-name">Emilea Zingas & Vadym Kolesnik</div><div class="roster-card-disc">Senior · Ice Dance</div></div></a>
+      <a class="roster-card" href="christina-carreira-anthony-ponomarenko.html"><div class="roster-card-photo"><img src="images/christina-carreira-anthony-ponomarenko.jpg" alt="Christina Carreira & Anthony Ponomarenko" onerror="this.style.display='none'"><div class="roster-card-init">CP</div><div class="roster-card-tier tier-a">Senior A Team</div></div><div class="roster-card-body"><div class="roster-card-name">Christina Carreira & Anthony Ponomarenko</div><div class="roster-card-disc">Senior · Ice Dance</div></div></a>
+    </div>
+    <div class="tier-header b">Senior B Team</div>
+    <div class="roster-grid">
+      <a class="roster-card" href="caroline-green-michael-parsons.html"><div class="roster-card-photo"><img src="images/caroline-green-michael-parsons.jpg" alt="Caroline Green & Michael Parsons" onerror="this.style.display='none'"><div class="roster-card-init">GP</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Caroline Green & Michael Parsons</div><div class="roster-card-disc">Senior · Ice Dance</div></div></a>
+      <a class="roster-card" href="emily-bratti-ian-somerville.html"><div class="roster-card-photo"><img src="images/emily-bratti-ian-somerville.jpg" alt="Emily Bratti & Ian Somerville" onerror="this.style.display='none'"><div class="roster-card-init">BS</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Emily Bratti & Ian Somerville</div><div class="roster-card-disc">Senior · Ice Dance</div></div></a>
+      <a class="roster-card" href="maia-shibutani-alex-shibutani.html"><div class="roster-card-photo"><img src="images/maia-shibutani-alex-shibutani.jpg" alt="Maia Shibutani & Alex Shibutani" onerror="this.style.display='none'"><div class="roster-card-init">SS</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Maia Shibutani & Alex Shibutani</div><div class="roster-card-disc">Senior · Ice Dance</div></div></a>
+      <a class="roster-card" href="eva-pate-logan-bye.html"><div class="roster-card-photo"><img src="images/eva-pate-logan-bye.jpg" alt="Eva Pate & Logan Bye" onerror="this.style.display='none'"><div class="roster-card-init">PB</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Eva Pate & Logan Bye</div><div class="roster-card-disc">Senior · Ice Dance</div></div></a>
+      <a class="roster-card" href="oona-brown-gage-brown.html"><div class="roster-card-photo"><img src="images/oona-brown-gage-brown.jpg" alt="Oona Brown & Gage Brown" onerror="this.style.display='none'"><div class="roster-card-init">BB</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Oona Brown & Gage Brown</div><div class="roster-card-disc">Senior · Ice Dance</div></div></a>
+      <a class="roster-card" href="katarina-wolfkostin-dimitry-tsarevski.html"><div class="roster-card-photo"><img src="images/katarina-wolfkostin-dimitry-tsarevski.jpg" alt="Katarina Wolfkostin & Dimitry Tsarevski" onerror="this.style.display='none'"><div class="roster-card-init">WT</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Katarina Wolfkostin & Dimitry Tsarevski</div><div class="roster-card-disc">Senior · Ice Dance</div></div></a>
+      <a class="roster-card" href="leah-neset-artem-markelov.html"><div class="roster-card-photo"><img src="images/leah-neset-artem-markelov.jpg" alt="Leah Neset & Artem Markelov" onerror="this.style.display='none'"><div class="roster-card-init">NM</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Leah Neset & Artem Markelov</div><div class="roster-card-disc">Senior · Ice Dance</div></div></a>
+      <a class="roster-card" href="annabelle-morozov-jeffrey-chen.html"><div class="roster-card-photo"><img src="images/annabelle-morozov-jeffrey-chen.jpg" alt="Annabelle Morozov & Jeffrey Chen" onerror="this.style.display='none'"><div class="roster-card-init">MC</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Annabelle Morozov & Jeffrey Chen</div><div class="roster-card-disc">Senior · Ice Dance</div></div></a>
+      <a class="roster-card" href="amy-cui-jonathan-rogers.html"><div class="roster-card-photo"><img src="images/amy-cui-jonathan-rogers.jpg" alt="Amy Cui & Jonathan Rogers" onerror="this.style.display='none'"><div class="roster-card-init">CR</div><div class="roster-card-tier tier-b">Senior B Team</div></div><div class="roster-card-body"><div class="roster-card-name">Amy Cui & Jonathan Rogers</div><div class="roster-card-disc">Senior · Ice Dance</div></div></a>
+    </div>
+    <div class="tier-header c">Senior C Team</div>
+    <div class="roster-grid">
+      <a class="roster-card" href="raffaella-koncius-alexey-shchepetov.html"><div class="roster-card-photo"><img src="images/raffaella-koncius-alexey-shchepetov.jpg" alt="Raffaella Koncius & Alexey Shchepetov" onerror="this.style.display='none'"><div class="roster-card-init">KS</div><div class="roster-card-tier tier-c">Senior C Team</div></div><div class="roster-card-body"><div class="roster-card-name">Raffaella Koncius & Alexey Shchepetov</div><div class="roster-card-disc">Senior · Ice Dance</div></div></a>
+      <a class="roster-card" href="vanessa-pham-anton-spiridonov.html"><div class="roster-card-photo"><img src="images/vanessa-pham-anton-spiridonov.jpg" alt="Vanessa Pham & Anton Spiridonov" onerror="this.style.display='none'"><div class="roster-card-init">PS</div><div class="roster-card-tier tier-c">Senior C Team</div></div><div class="roster-card-body"><div class="roster-card-name">Vanessa Pham & Anton Spiridonov</div><div class="roster-card-disc">Senior · Ice Dance</div></div></a>
+    </div>
+  </div>
+</div>
+<script>
+function showDisc(disc) {
+  document.querySelectorAll('.disc-section').forEach(function(s) { s.classList.remove('active'); });
+  document.querySelectorAll('.page-sub-a').forEach(function(a) { a.classList.remove('active'); });
+  document.getElementById('disc-' + disc).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
